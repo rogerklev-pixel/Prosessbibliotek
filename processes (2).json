@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "icon": "🧭",
+    "title": "Søkekonferanse - en medvirkningsbasert strategiprosess",
+    "description": "En strukturert samling der teamet eller organisasjonen setter retning, prioriterer mål og skaper felles forståelse for veien videre. Samlinger er typisk 1–2 dager og kombinerer analyse, dialog og beslutning.",
+    "steps": [
+      {
+        "title": "Forberedelse og invitasjon",
+        "desc": "Send ut agenda, bakgrunnsmateriale og eventuelle forberedelsesoppgaver til deltakerne minst en uke i forveien.",
+        "note": "Gi deltakerne tid til å reflektere og forberede seg – det hever kvaliteten på dialogen betraktelig."
+      },
+      {
+        "title": "Situasjonsanalyse",
+        "desc": "Gjennomgå nåsituasjonen: hva fungerer, hva er utfordrende, hva sier omgivelsene? Bruk gjerne SWOT eller tilsvarende rammeverk.",
+        "note": ""
+      },
+      {
+        "title": "Visjon og retning",
+        "desc": "Definer eller bekreft hvor dere vil. Hva skal kjennetegne organisasjonen om 3–5 år? Bruk åpne spørsmål og kreative prosesser.",
+        "note": "En felles visjon skaper motivasjon og felles ansvar. Bruk tid her."
+      },
+      {
+        "title": "Prioritering av strategiske mål",
+        "desc": "Velg ut de viktigste fokusområdene og konkretiser dem til målbare mål.",
+        "note": ""
+      },
+      {
+        "title": "Handlingsplan og ansvar",
+        "desc": "Hva skal gjøres, av hvem, og innen når? Skriv ned konkrete tiltak og fordel ansvar.",
+        "note": "Uten konkrete handlinger forblir strategien et dokument. Sørg for at alle forlater rommet med klare oppgaver."
+      },
+      {
+        "title": "Oppsummering og avslutning",
+        "desc": "Gå gjennom hva som er besluttet, hva som forventes videre og eventuelle neste steg for oppfølging.",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "icon": "🤝",
+    "title": "Teamcoaching",
+    "description": "En fasilitert prosess der teamet jobber med samspill, kommunikasjon og felles praksis for å øke effektivitet og trivsel. Kan gjennomføres som enkeltøkt eller et løp over tid.",
+    "steps": [
+      {
+        "title": "Kartlegging av teamets nåsituasjon",
+        "desc": "Samle inn data om teamets fungering via samtaler, observasjon eller spørreskjema. Hva opplever teammedlemmene?",
+        "note": "Anonymiserte innspill gir ofte mer ærlige svar enn åpne spørsmål i plenum."
+      },
+      {
+        "title": "Tilbakemelding og refleksjon",
+        "desc": "Del funnene med teamet. Skap rom for refleksjon: hva kjenner de igjen, hva overrasker dem?",
+        "note": ""
+      },
+      {
+        "title": "Identifiser utviklingsområder",
+        "desc": "Bli enige om hvilke temaer teamet vil jobbe med. Prioriter 2–3 fokusområder.",
+        "note": ""
+      },
+      {
+        "title": "Prosess og øvelser",
+        "desc": "Gjennomfør strukturerte aktiviteter som adresserer fokusområdene. Bruk dialogkort, rollespill, tilbakemeldingsøvelser e.l.",
+        "note": "Veksle mellom plenumsarbeid og par-/gruppearbeid for å engasjere alle."
+      },
+      {
+        "title": "Lage avtaler og forpliktelser",
+        "desc": "Hva skal teamet gjøre annerledes? Skriv ned konkrete avtaler som teamet holder hverandre ansvarlig for.",
+        "note": "Spesifikke, observerbare avtaler fungerer langt bedre enn vage intensjoner."
+      },
+      {
+        "title": "Evaluering og oppfølging",
+        "desc": "Planlegg neste møtepunkt og avklar hvordan dere skal følge opp avtalene som er inngått.",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "icon": "📋",
+    "title": "Tavlemøte",
+    "description": "Et kort, stående daglig møte (typisk 10–15 minutter) der teamet koordinerer dagens arbeid, deler status og identifiserer hindringer. Tavlen gjør flyten i arbeidet synlig for alle.",
+    "steps": [
+      {
+        "title": "Gjennomgang av tavlen",
+        "desc": "Gå igjennom oppgavene fra høyre til venstre (fra «Ferdig» til «Å gjøre»). Hva er avsluttet siden sist?",
+        "note": "Å starte med det som er ferdig gir energi og skaper momentum."
+      },
+      {
+        "title": "Status per person",
+        "desc": "Hver deltaker svarer kort: Hva jobbet jeg med i går? Hva jobber jeg med i dag? Er det noe som stopper meg?",
+        "note": "Hold det kort. Dype diskusjoner tas utenfor tavlemøtet."
+      },
+      {
+        "title": "Identifiser hindringer",
+        "desc": "Løft frem det som blokkerer fremdrift. Avklar hvem som tar ansvar for å løse hindringen.",
+        "note": ""
+      },
+      {
+        "title": "Oppdater tavlen",
+        "desc": "Flytt kort, legg til nye oppgaver, fjern det som er ferdigstilt.",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "icon": "🚀",
+    "title": "Prosjektoppstart",
+    "description": "En strukturert kickoff-prosess som sikrer at alle involverte har felles forståelse av mål, rammer, roller og arbeidsform før arbeidet begynner.",
+    "steps": [
+      {
+        "title": "Bakgrunn og formål",
+        "desc": "Presenter hvorfor prosjektet eksisterer, hvilket problem det løser og hva som er definert som suksess.",
+        "note": "Sørg for at alle har samme forståelse av «hvorfor» – dette er motivasjonsfundamentet."
+      },
+      {
+        "title": "Mål og leveranser",
+        "desc": "Definer konkrete mål (SMART) og hvilke leveranser som skal produseres.",
+        "note": ""
+      },
+      {
+        "title": "Roller og ansvar",
+        "desc": "Avklar hvem som gjør hva. Bruk gjerne RACI-modellen for å tydeliggjøre beslutnings- og ansvarskart.",
+        "note": "Uklare roller er en av de vanligste kildene til konflikter i prosjekter."
+      },
+      {
+        "title": "Arbeidsform og møtestruktur",
+        "desc": "Avtal hvordan dere jobber: verktøy, møtefrekvens, kommunikasjonskanaler og beslutningsprosesser.",
+        "note": ""
+      },
+      {
+        "title": "Risikovurdering",
+        "desc": "Identifiser de viktigste risikoene og avtal tiltak for å håndtere dem.",
+        "note": ""
+      },
+      {
+        "title": "Milepæler og tidsplan",
+        "desc": "Sett opp en overordnet plan med milepæler, frister og avhengigheter.",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "icon": "💬",
+    "title": "Teammøte",
+    "description": "Et regelmessig møte der hele teamet samles for å dele informasjon, koordinere arbeid, ta beslutninger og styrke relasjonene. Gode teammøter er forberedte, tidseffektive og involverende.",
+    "steps": [
+      {
+        "title": "Innsjekk",
+        "desc": "Start med en kort innsjekk-runde der alle deler en setning om hvordan de har det. Skaper nærhet og tilstedeværelse.",
+        "note": "Enkelt grep med stor effekt – folk lytter bedre når de selv har fått sagt noe."
+      },
+      {
+        "title": "Informasjon fra leder/organisasjon",
+        "desc": "Del relevant informasjon fra ledelsesnivå og organisasjonen for øvrig.",
+        "note": ""
+      },
+      {
+        "title": "Status og koordinering",
+        "desc": "Gå igjennom pågående arbeid og hva som trenger koordinering på tvers i teamet.",
+        "note": ""
+      },
+      {
+        "title": "Saker til beslutning eller diskusjon",
+        "desc": "Ta opp saker som krever felles diskusjon. Bruk en fast struktur: presentasjon → spørsmål → diskusjon → beslutning.",
+        "note": "Skill mellom orienteringssaker og beslutningssaker. Det sparer tid."
+      },
+      {
+        "title": "Eventuelt og utsjekk",
+        "desc": "Gi rom for korte innspill. Avslutt med en rask utsjekk: hva tar vi med oss herfra?",
+        "note": ""
+      }
+    ]
+  }
+]
