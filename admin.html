@@ -357,7 +357,7 @@ let editingId=null;
 let stepCount=0;
 
 function stepHtml(idx, s) {
-  const dv=s?(s.desc||''):'', nv=s?(s.note||')':'';
+  const dv=s?(s.desc||''):'', nv=s?(s.note||''):'';
   return `<div class="step-edit-item" data-idx="${idx}">
     <div class="step-edit-header"><span>Trinn ${idx+1}</span>
       <button class="remove-step-btn" onclick="this.closest('.step-edit-item').remove();renumber()">✕</button></div>
@@ -403,9 +403,9 @@ function openModal(id=null) {
   document.getElementById('modalTitle').textContent=id?'Rediger prosess':'Ny prosess';
   const p=id?processes.find(x=>x.id===id):null;
   document.getElementById('fTitle').value=p?p.title:'';
-  document.getElementById('fIcon').value=p?(p.icon||')':'';
+  document.getElementById('fIcon').value=p?(p.icon||''):'';
   const ta=document.getElementById('fDesc'), prev=document.getElementById('fDescPrev');
-  ta.value=p?(p.description||')':''; ta.style.display='block'; prev.style.display='none';
+  ta.value=p?(p.description||''):''; ta.style.display='block'; prev.style.display='none';
   document.querySelectorAll('#modalOverlay .md-tabs')[0]?.querySelectorAll('.md-tab').forEach((t,i)=>t.classList.toggle('active',i===0));
   const ed=document.getElementById('stepsEditor'); ed.innerHTML='';
   (p?p.steps:[]).forEach((s,i)=>{stepCount=i+1; ed.insertAdjacentHTML('beforeend',stepHtml(i,s));});
