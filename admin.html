@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prosessbibliotek – Admin</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 <style>
   :root {
     --bg: #f5f2ec; --surface: #ffffff; --ink: #1a1a18; --ink-muted: #6b6860;
@@ -14,82 +15,42 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--ink); min-height: 100vh; }
 
-  /* ── LOGIN SCREEN ── */
-  #loginScreen {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  }
-  .login-box {
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px;
-    padding: 48px 44px; width: min(400px, 92vw); text-align: center;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  }
+  #loginScreen { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .login-box { background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px; padding: 48px 44px; width: min(400px, 92vw); text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
   .login-box h1 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 6px; }
   .login-box p { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 28px; }
-  .login-box input {
-    width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px;
-    font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: var(--ink);
-    background: var(--bg); outline: none; transition: border-color 0.2s; margin-bottom: 12px;
-  }
+  .login-box input { width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: var(--ink); background: var(--bg); outline: none; transition: border-color 0.2s; margin-bottom: 12px; }
   .login-box input:focus { border-color: var(--accent); background: white; }
-  .login-box button {
-    width: 100%; padding: 12px; background: var(--accent); color: white; border: none;
-    border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 1rem;
-    font-weight: 600; cursor: pointer; transition: background 0.2s;
-  }
+  .login-box button { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
   .login-box button:hover { background: #1f4029; }
   .login-error { color: #b53c3c; font-size: 0.88rem; margin-top: 10px; min-height: 20px; }
 
-  /* ── APP ── */
   #app { display: none; }
 
-  header {
-    background: var(--accent); color: white;
-    padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  }
+  header { background: var(--accent); color: white; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   header h1 { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; }
   .header-right { display: flex; gap: 12px; align-items: center; }
-  #addBtn {
-    background: var(--accent2); color: white; border: none; padding: 9px 20px; border-radius: 6px;
-    font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; font-weight: 600;
-    cursor: pointer; display: flex; align-items: center; gap: 7px; transition: background 0.2s;
-  }
+  #addBtn { background: var(--accent2); color: white; border: none; padding: 9px 20px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 7px; transition: background 0.2s; }
   #addBtn:hover { background: #a56b18; }
-  #logoutBtn {
-    background: rgba(255,255,255,0.15); color: white; border: 1.5px solid rgba(255,255,255,0.3);
-    padding: 8px 16px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.85rem; cursor: pointer; transition: background 0.2s;
-  }
+  #logoutBtn { background: rgba(255,255,255,0.15); color: white; border: 1.5px solid rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
   #logoutBtn:hover { background: rgba(255,255,255,0.25); }
 
   .search-bar { padding: 20px 40px 0; }
-  .search-bar input {
-    width: 100%; max-width: 420px; padding: 10px 16px; border: 1.5px solid var(--border);
-    border-radius: 8px; background: white; font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.95rem; color: var(--ink); outline: none; transition: border-color 0.2s;
-  }
+  .search-bar input { width: 100%; max-width: 420px; padding: 10px 16px; border: 1.5px solid var(--border); border-radius: 8px; background: white; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: var(--ink); outline: none; transition: border-color 0.2s; }
   .search-bar input:focus { border-color: var(--accent); }
 
-  #dashboard {
-    padding: 24px 40px 60px;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;
-  }
-  .card {
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px;
-    padding: 24px 22px 20px; cursor: pointer;
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s; position: relative; overflow: hidden;
-  }
+  #dashboard { padding: 24px 40px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+
+  .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 24px 22px 20px; transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s; position: relative; overflow: hidden; }
   .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent); opacity: 0; transition: opacity 0.2s; }
   .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); border-color: var(--accent); }
   .card:hover::before { opacity: 1; }
-  .card-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
-  .card h2 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-  .card p { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .card-steps { margin-top: 12px; font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.3px; }
+  .card-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; cursor: pointer; }
+  .card h2 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; cursor: pointer; }
+  .card p { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+  .card-steps { margin-top: 12px; font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.3px; cursor: pointer; }
   .card-actions { display: flex; gap: 8px; margin-top: 14px; }
-  .card-btn {
-    flex: 1; padding: 7px; border: none; border-radius: 6px; font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.15s;
-  }
+  .card-btn { flex: 1; padding: 7px; border: none; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.15s; }
   .card-btn.edit { background: var(--accent-light); color: var(--accent); }
   .card-btn.edit:hover { background: #cfe0d1; }
   .card-btn.del { background: #fdecea; color: #b53c3c; }
@@ -98,13 +59,9 @@
   .empty-state { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--ink-muted); }
   .empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
 
-  /* ── DETAIL PANEL ── */
   #overlay { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.5); z-index: 100; backdrop-filter: blur(2px); }
   #overlay.open { display: flex; align-items: flex-start; justify-content: flex-end; }
-  #panel {
-    background: var(--surface); width: min(680px, 100vw); height: 100vh;
-    overflow-y: auto; padding: 36px 40px 60px; animation: slideIn 0.25s ease; position: relative;
-  }
+  #panel { background: var(--surface); width: min(680px, 100vw); height: 100vh; overflow-y: auto; padding: 36px 40px 60px; animation: slideIn 0.25s ease; position: relative; }
   @keyframes slideIn { from { transform: translateX(40px); opacity:0; } to { transform: translateX(0); opacity:1; } }
   #closeBtn { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink-muted); padding: 4px 8px; border-radius: 4px; transition: background 0.15s; }
   #closeBtn:hover { background: var(--accent-light); }
@@ -112,6 +69,16 @@
   #panel .panel-meta { font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 20px; }
   #panel .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; margin-top: 28px; }
   #panel .description-text { font-size: 1rem; line-height: 1.7; color: var(--ink); border-left: 3px solid var(--accent-light); padding-left: 16px; }
+
+  .md-body p { margin-bottom: 10px; }
+  .md-body strong { font-weight: 700; }
+  .md-body em { font-style: italic; }
+  .md-body ul, .md-body ol { padding-left: 20px; margin-bottom: 10px; }
+  .md-body li { margin-bottom: 4px; }
+  .md-body a { color: var(--accent); text-decoration: underline; }
+  .md-body a:hover { color: #1f4029; }
+  .md-body img { max-width: 100%; border-radius: 6px; margin: 10px 0; display: block; }
+
   .step-list { list-style: none; margin-top: 4px; }
   .step-item { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
   .step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
@@ -122,44 +89,48 @@
   /* ── MODAL ── */
   #modalOverlay { display: none; position: fixed; inset: 0; background: rgba(26,26,24,0.6); z-index: 200; backdrop-filter: blur(2px); align-items: center; justify-content: center; }
   #modalOverlay.open { display: flex; }
-  #modal { background: var(--surface); border-radius: 12px; width: min(700px, 96vw); max-height: 90vh; overflow-y: auto; padding: 36px 36px 32px; animation: popIn 0.2s ease; position: relative; }
+  #modal { background: var(--surface); border-radius: 12px; width: min(780px, 96vw); max-height: 92vh; overflow-y: auto; padding: 36px 36px 32px; animation: popIn 0.2s ease; }
   @keyframes popIn { from { transform:scale(0.95); opacity:0; } to { transform:scale(1); opacity:1; } }
   #modal h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 22px; }
+
   .form-row { margin-bottom: 18px; }
-  .form-row label { display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-muted); margin-bottom: 6px; }
-  .form-row input, .form-row textarea {
-    width: 100%; border: 1.5px solid var(--border); border-radius: 7px; padding: 10px 13px;
-    font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: var(--ink);
-    background: var(--bg); outline: none; transition: border-color 0.2s; resize: vertical;
-  }
-  .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); background: white; }
+  .form-row > label { display: block; font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-muted); margin-bottom: 6px; }
+  .form-row input[type=text] { width: 100%; border: 1.5px solid var(--border); border-radius: 7px; padding: 10px 13px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; color: var(--ink); background: var(--bg); outline: none; transition: border-color 0.2s; }
+  .form-row input[type=text]:focus { border-color: var(--accent); background: white; }
+
+  .md-editor-wrap { border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; background: white; }
+  .md-tabs { display: flex; border-bottom: 1.5px solid var(--border); background: var(--bg); }
+  .md-tab { padding: 7px 16px; font-size: 0.82rem; font-weight: 600; cursor: pointer; border: none; background: none; color: var(--ink-muted); border-bottom: 2px solid transparent; margin-bottom: -1.5px; transition: color 0.15s, border-color 0.15s; font-family: 'Source Sans 3', sans-serif; }
+  .md-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .md-toolbar { display: flex; gap: 2px; padding: 5px 8px; background: var(--bg); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .md-btn { background: none; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 0.82rem; color: var(--ink-muted); font-weight: 600; transition: background 0.15s, color 0.15s; }
+  .md-btn:hover { background: var(--accent-light); color: var(--accent); }
+  .md-sep { width: 1px; background: var(--border); margin: 2px 3px; }
+  .md-textarea { width: 100%; border: none; outline: none; padding: 10px 13px; font-family: 'Source Sans 3', sans-serif; font-size: 0.92rem; color: var(--ink); background: white; resize: vertical; min-height: 90px; line-height: 1.6; display: block; }
+  .md-preview { padding: 10px 13px; min-height: 60px; display: none; font-size: 0.92rem; }
+  .md-hint { font-size: 0.78rem; color: var(--ink-muted); margin-top: 5px; }
+  .md-hint code { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-family: monospace; }
+
   .step-edit-item { background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
   .step-edit-header { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
-  .step-edit-item input, .step-edit-item textarea { width: 100%; margin-bottom: 8px; border: 1.5px solid var(--border); border-radius: 6px; padding: 8px 11px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--ink); background: white; outline: none; resize: vertical; transition: border-color 0.2s; }
-  .step-edit-item input:focus, .step-edit-item textarea:focus { border-color: var(--accent); }
-  .step-edit-item textarea { min-height: 60px; }
-  .step-edit-item .note-field { font-style: italic; color: #7a6740; }
-  .remove-step-btn { background: none; border: none; color: #b53c3c; cursor: pointer; font-size: 1rem; padding: 2px 6px; border-radius: 4px; transition: background 0.15s; }
+  .step-field-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-muted); margin-bottom: 5px; margin-top: 10px; }
+  .step-title-input { width: 100%; border: 1.5px solid var(--border); border-radius: 6px; padding: 8px 11px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--ink); background: white; outline: none; transition: border-color 0.2s; margin-bottom: 2px; }
+  .step-title-input:focus { border-color: var(--accent); }
+  .remove-step-btn { background: none; border: none; color: #b53c3c; cursor: pointer; font-size: 1rem; padding: 2px 6px; border-radius: 4px; }
   .remove-step-btn:hover { background: #fdecea; }
-  #addStepBtn { background: var(--accent-light); color: var(--accent); border: none; padding: 8px 16px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; margin-top: 4px; transition: background 0.2s; }
+  #addStepBtn { background: var(--accent-light); color: var(--accent); border: none; padding: 8px 16px; border-radius: 6px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; margin-top: 4px; }
   #addStepBtn:hover { background: #cfe0d1; }
-  .modal-actions { display: flex; gap: 10px; margin-top: 24px; justify-content: flex-end; }
-  .btn-save { background: var(--accent); color: white; border: none; padding: 11px 28px; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-  .btn-save:hover { background: #1f4029; }
-  .btn-cancel { background: none; color: var(--ink-muted); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
-  .btn-cancel:hover { background: var(--bg); }
 
-  /* ── EXPORT BANNER ── */
-  #exportBanner {
-    display: none; position: fixed; bottom: 24px; right: 24px;
-    background: var(--ink); color: white; padding: 14px 20px; border-radius: 10px;
-    font-size: 0.9rem; line-height: 1.5; max-width: 340px; z-index: 300;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  }
+  .modal-actions { display: flex; gap: 10px; margin-top: 24px; justify-content: flex-end; }
+  .btn-save { background: var(--accent); color: white; border: none; padding: 11px 28px; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+  .btn-save:hover { background: #1f4029; }
+  .btn-cancel { background: none; color: var(--ink-muted); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 7px; font-family: 'Source Sans 3', sans-serif; font-size: 0.95rem; cursor: pointer; }
+
+  #exportBanner { display: none; position: fixed; bottom: 24px; right: 24px; background: var(--ink); color: white; padding: 14px 20px; border-radius: 10px; font-size: 0.9rem; line-height: 1.5; max-width: 340px; z-index: 300; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
   #exportBanner.open { display: block; }
   #exportBanner strong { display: block; margin-bottom: 6px; }
   #exportBanner code { font-size: 0.82rem; background: rgba(255,255,255,0.12); padding: 3px 7px; border-radius: 4px; }
-  #exportBanner button { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; float: right; margin-top: -28px; font-size: 1.1rem; }
+  #exportBanner .close-banner { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; float: right; margin-top: -28px; font-size: 1.1rem; }
 
   @media(max-width:600px) {
     header, .search-bar, #dashboard { padding-left: 18px; padding-right: 18px; }
@@ -170,7 +141,6 @@
 </head>
 <body>
 
-<!-- Login -->
 <div id="loginScreen">
   <div class="login-box">
     <h1>Prosessbibliotek</h1>
@@ -181,7 +151,6 @@
   </div>
 </div>
 
-<!-- App -->
 <div id="app">
   <header>
     <h1>Prosessbibliotek – Admin</h1>
@@ -193,15 +162,12 @@
       <button id="logoutBtn" onclick="logout()">Logg ut</button>
     </div>
   </header>
-
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Søk etter prosess…" oninput="renderDashboard()">
   </div>
-
   <div id="dashboard"></div>
 </div>
 
-<!-- Detail panel -->
 <div id="overlay" onclick="closePanel(event)">
   <div id="panel">
     <button id="closeBtn" onclick="closePanel()">×</button>
@@ -209,17 +175,43 @@
   </div>
 </div>
 
-<!-- Modal -->
 <div id="modalOverlay" onclick="closeModal(event)">
   <div id="modal">
     <h3 id="modalTitle">Ny prosess</h3>
-    <div class="form-row"><label>Tittel</label><input type="text" id="fTitle" placeholder="F.eks. Strategisamling"></div>
-    <div class="form-row"><label>Ikon (emoji)</label><input type="text" id="fIcon" placeholder="🎯" maxlength="4" style="max-width:80px"></div>
-    <div class="form-row"><label>Beskrivelse av prosessen</label><textarea id="fDesc" rows="3" placeholder="Hva er denne prosessen, og hva er hensikten?"></textarea></div>
+    <div class="form-row">
+      <label>Tittel</label>
+      <input type="text" id="fTitle" placeholder="F.eks. Strategisamling">
+    </div>
+    <div class="form-row">
+      <label>Ikon (emoji)</label>
+      <input type="text" id="fIcon" placeholder="🎯" maxlength="4" style="max-width:80px">
+    </div>
+    <div class="form-row">
+      <label>Beskrivelse av prosessen</label>
+      <div class="md-editor-wrap">
+        <div class="md-tabs">
+          <button class="md-tab active" onclick="tabSwitch('fDesc',this,'write')">Skriv</button>
+          <button class="md-tab" onclick="tabSwitch('fDesc',this,'preview')">Forhåndsvis</button>
+        </div>
+        <div class="md-toolbar">
+          <button class="md-btn" onclick="fmt('fDesc','bold')"><b>F</b></button>
+          <button class="md-btn" onclick="fmt('fDesc','italic')"><i>K</i></button>
+          <div class="md-sep"></div>
+          <button class="md-btn" onclick="fmt('fDesc','ul')">• Liste</button>
+          <button class="md-btn" onclick="fmt('fDesc','ol')">1. Liste</button>
+          <div class="md-sep"></div>
+          <button class="md-btn" onclick="fmt('fDesc','link')">🔗 Lenke</button>
+          <button class="md-btn" onclick="fmt('fDesc','img')">🖼 Bilde</button>
+        </div>
+        <textarea class="md-textarea" id="fDesc" rows="4" placeholder="Beskriv prosessen. Bruk **fet**, *kursiv*, [lenke](https://url) og ![bilde](https://bilde-url)"></textarea>
+        <div class="md-preview md-body" id="fDescPrev"></div>
+      </div>
+      <div class="md-hint">Tips: <code>**fet**</code> &nbsp;<code>*kursiv*</code> &nbsp;<code>[lenketekst](https://url)</code> &nbsp;<code>![alt](https://bilde.jpg)</code> &nbsp;<code>- punkt</code></div>
+    </div>
     <div class="form-row">
       <label>Trinn i gjennomføringen</label>
       <div id="stepsEditor"></div>
-      <button id="addStepBtn" onclick="addStepField()">+ Legg til trinn</button>
+      <button id="addStepBtn" onclick="addStep()">+ Legg til trinn</button>
     </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Avbryt</button>
@@ -228,212 +220,254 @@
   </div>
 </div>
 
-<!-- Export banner -->
 <div id="exportBanner">
-  <button onclick="document.getElementById('exportBanner').classList.remove('open')">×</button>
+  <button class="close-banner" onclick="this.closest('#exportBanner').classList.remove('open')">×</button>
   <strong>📥 Last opp til GitHub</strong>
-  Erstatt <code>processes.json</code> i repositoryet ditt med den nedlastede filen for å oppdatere biblioteket.
+  Erstatt <code>processes.json</code> i repositoryet ditt med den nedlastede filen.
 </div>
 
 <script>
-// ── PASSORD ──────────────────────────────────────────────
-// ENDRE DETTE PASSORDET til noe du velger selv:
-const ADMIN_PASSWORD = 'Pernilletupp1';
+const ADMIN_PASSWORD = 'prosess2024';
 
 function login() {
-  const pw = document.getElementById('passwordInput').value;
-  if (pw === ADMIN_PASSWORD) {
-    sessionStorage.setItem('admin_auth', '1');
+  if (document.getElementById('passwordInput').value === ADMIN_PASSWORD) {
+    sessionStorage.setItem('admin_auth','1');
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     loadProcesses();
   } else {
     document.getElementById('loginError').textContent = 'Feil passord. Prøv igjen.';
     document.getElementById('passwordInput').value = '';
-    document.getElementById('passwordInput').focus();
   }
 }
-
-function logout() {
-  sessionStorage.removeItem('admin_auth');
-  location.reload();
+function logout() { sessionStorage.removeItem('admin_auth'); location.reload(); }
+if (sessionStorage.getItem('admin_auth')==='1') {
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('app').style.display='block';
 }
 
-// Auto-login if session active
-if (sessionStorage.getItem('admin_auth') === '1') {
-  document.getElementById('loginScreen').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-}
-
-// ── DATA ──────────────────────────────────────────────────
 let processes = [];
-
 async function loadProcesses() {
-  try {
-    const r = await fetch('processes.json?t=' + Date.now());
-    processes = await r.json();
-  } catch(e) { processes = []; }
+  try { const r = await fetch('processes.json?t='+Date.now()); processes = await r.json(); }
+  catch(e) { processes=[]; }
   renderDashboard();
 }
 
 function saveJSON() {
-  const blob = new Blob([JSON.stringify(processes, null, 2)], {type: 'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'processes.json';
-  a.click();
+  const blob = new Blob([JSON.stringify(processes,null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='processes.json'; a.click();
   document.getElementById('exportBanner').classList.add('open');
-  setTimeout(() => document.getElementById('exportBanner').classList.remove('open'), 8000);
+  setTimeout(()=>document.getElementById('exportBanner').classList.remove('open'),8000);
 }
 
-// ── DASHBOARD ──────────────────────────────────────────────
+// ── MARKDOWN ──
+function renderMd(text) {
+  if (!text) return '';
+  if (typeof marked!=='undefined') { marked.setOptions({breaks:true,gfm:true}); return marked.parse(text); }
+  return text.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/!\[(.+?)\]\((https?:\/\/.+?)\)/g,'<img src="$2" alt="$1">')
+    .replace(/\[(.+?)\]\((https?:\/\/.+?)\)/g,'<a href="$2" target="_blank">$1</a>')
+    .replace(/\n/g,'<br>');
+}
+
+function tabSwitch(taId, btn, mode) {
+  const ta = document.getElementById(taId);
+  const prev = document.getElementById(taId+'Prev');
+  btn.closest('.md-tabs').querySelectorAll('.md-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  if (mode==='preview') {
+    prev.innerHTML = renderMd(ta.value)||'<span style="color:var(--ink-muted);font-style:italic">Ingen innhold ennå</span>';
+    ta.style.display='none'; prev.style.display='block';
+  } else { ta.style.display='block'; prev.style.display='none'; }
+}
+
+function tabSwitchStep(taId, btn, mode) {
+  const ta = document.getElementById(taId);
+  const prev = document.getElementById(taId+'Prev');
+  btn.closest('.md-tabs').querySelectorAll('.md-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  if (mode==='preview') {
+    prev.innerHTML = renderMd(ta.value)||'<span style="color:var(--ink-muted);font-style:italic">Ingen innhold</span>';
+    ta.style.display='none'; prev.style.display='block';
+  } else { ta.style.display='block'; prev.style.display='none'; }
+}
+
+function fmt(taId, type) {
+  const ta = document.getElementById(taId); if(!ta) return;
+  const s=ta.selectionStart, e=ta.selectionEnd, sel=ta.value.substring(s,e);
+  const map = { bold:`**${sel||'fet tekst'}**`, italic:`*${sel||'kursiv tekst'}*`,
+    ul:`- ${sel||'listepunkt'}`, ol:`1. ${sel||'listepunkt'}`,
+    link:`[${sel||'lenketekst'}](https://eksempel.no)`,
+    img:`![${sel||'bildetekst'}](https://url-til-bilde.jpg)` };
+  const ins = map[type]||'';
+  ta.value = ta.value.substring(0,s)+ins+ta.value.substring(e);
+  ta.focus(); ta.selectionStart=ta.selectionEnd=s+ins.length;
+}
+
+// ── DASHBOARD ──
 function renderDashboard() {
-  const q = (document.getElementById('searchInput')?.value || '').toLowerCase();
-  const filtered = q ? processes.filter(p => p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)) : processes;
-  const grid = document.getElementById('dashboard');
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div class="empty-state"><h3>${q ? 'Ingen treff' : 'Ingen prosesser ennå'}</h3><p>Klikk «Ny prosess» for å komme i gang.</p></div>`;
-    return;
-  }
-  grid.innerHTML = filtered.map(p => `
+  const q=(document.getElementById('searchInput')?.value||'').toLowerCase();
+  const list=q?processes.filter(p=>p.title.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)):processes;
+  const g=document.getElementById('dashboard');
+  if(!list.length){g.innerHTML=`<div class="empty-state"><h3>${q?'Ingen treff':'Ingen prosesser ennå'}</h3><p>Klikk «Ny prosess» for å komme i gang.</p></div>`;return;}
+  g.innerHTML=list.map(p=>`
     <div class="card">
-      <span class="card-icon" onclick="openPanel(${p.id})">${p.icon || '📄'}</span>
+      <span class="card-icon" onclick="openPanel(${p.id})">${p.icon||'📄'}</span>
       <h2 onclick="openPanel(${p.id})">${esc(p.title)}</h2>
-      <p onclick="openPanel(${p.id})">${esc(p.description)}</p>
+      <p onclick="openPanel(${p.id})">${(p.description||'').replace(/[#*_\[\]!]/g,'').substring(0,120)}${(p.description||'').length>120?'…':''}</p>
       <div class="card-steps" onclick="openPanel(${p.id})">${p.steps.length} trinn</div>
       <div class="card-actions">
         <button class="card-btn edit" onclick="openModal(${p.id})">Rediger</button>
         <button class="card-btn del" onclick="deleteProcess(${p.id})">Slett</button>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
-// ── DETAIL PANEL ───────────────────────────────────────────
+// ── PANEL ──
 function openPanel(id) {
-  const p = processes.find(x => x.id === id);
-  if (!p) return;
-  const stepsHtml = p.steps.map((s, i) => `
+  const p=processes.find(x=>x.id===id); if(!p) return;
+  const stepsHtml=p.steps.map((s,i)=>`
     <li class="step-item">
       <div class="step-num">${i+1}</div>
       <div class="step-body">
         <div class="step-title">${esc(s.title)}</div>
-        <div class="step-desc">${esc(s.desc)}</div>
-        ${s.note ? `<div class="step-note">💡 ${esc(s.note)}</div>` : ''}
+        <div class="step-desc md-body">${renderMd(s.desc)}</div>
+        ${s.note?`<div class="step-note md-body">💡 ${renderMd(s.note)}</div>`:''}
       </div>
-    </li>
-  `).join('');
-  document.getElementById('panelContent').innerHTML = `
-    <div style="font-size:2.2rem;margin-bottom:8px">${p.icon || '📄'}</div>
+    </li>`).join('');
+  document.getElementById('panelContent').innerHTML=`
+    <div style="font-size:2.2rem;margin-bottom:8px">${p.icon||'📄'}</div>
     <h2>${esc(p.title)}</h2>
     <div class="panel-meta">${p.steps.length} trinn</div>
     <div class="section-label">Om prosessen</div>
-    <div class="description-text">${esc(p.description)}</div>
+    <div class="description-text md-body">${renderMd(p.description)}</div>
     <div class="section-label">Gjennomføring</div>
-    <ol class="step-list">${stepsHtml}</ol>
-  `;
+    <ol class="step-list">${stepsHtml}</ol>`;
   document.getElementById('overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
-
 function closePanel(e) {
-  if (e && e.target !== document.getElementById('overlay') && e.target !== document.getElementById('closeBtn')) return;
+  if(e&&e.target!==document.getElementById('overlay')&&e.target!==document.getElementById('closeBtn')) return;
   document.getElementById('overlay').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
 
-// ── MODAL ──────────────────────────────────────────────────
-let editingId = null;
+// ── MODAL ──
+let editingId=null;
+let stepCount=0;
 
-function openModal(id = null) {
-  editingId = id;
-  document.getElementById('modalTitle').textContent = id ? 'Rediger prosess' : 'Ny prosess';
-  const p = id ? processes.find(x => x.id === id) : null;
-  document.getElementById('fTitle').value = p ? p.title : '';
-  document.getElementById('fIcon').value = p ? (p.icon || '') : '';
-  document.getElementById('fDesc').value = p ? p.description : '';
-  document.getElementById('stepsEditor').innerHTML = '';
-  (p ? p.steps : []).forEach(s => addStepField(s));
+function stepHtml(idx, s) {
+  const dv=s?(s.desc||''):'', nv=s?(s.note||')':'';
+  return `<div class="step-edit-item" data-idx="${idx}">
+    <div class="step-edit-header"><span>Trinn ${idx+1}</span>
+      <button class="remove-step-btn" onclick="this.closest('.step-edit-item').remove();renumber()">✕</button></div>
+    <input type="text" class="step-title-input" placeholder="Tittel på trinnet" value="${s?esc(s.title):''}">
+    <div class="step-field-label">Beskrivelse</div>
+    <div class="md-editor-wrap">
+      <div class="md-tabs">
+        <button class="md-tab active" onclick="tabSwitchStep('sd${idx}',this,'write')">Skriv</button>
+        <button class="md-tab" onclick="tabSwitchStep('sd${idx}',this,'preview')">Forhåndsvis</button>
+      </div>
+      <div class="md-toolbar">
+        <button class="md-btn" onclick="fmt('sd${idx}','bold')"><b>F</b></button>
+        <button class="md-btn" onclick="fmt('sd${idx}','italic')"><i>K</i></button>
+        <div class="md-sep"></div>
+        <button class="md-btn" onclick="fmt('sd${idx}','ul')">• Liste</button>
+        <div class="md-sep"></div>
+        <button class="md-btn" onclick="fmt('sd${idx}','link')">🔗 Lenke</button>
+        <button class="md-btn" onclick="fmt('sd${idx}','img')">🖼 Bilde</button>
+      </div>
+      <textarea class="md-textarea" id="sd${idx}" rows="3" placeholder="Hva gjøres i dette trinnet?">${dv}</textarea>
+      <div class="md-preview md-body" id="sd${idx}Prev"></div>
+    </div>
+    <div class="step-field-label">Hensikt / tips <span style="font-weight:400;text-transform:none;letter-spacing:0">(vises som gult tips)</span></div>
+    <div class="md-editor-wrap">
+      <div class="md-tabs">
+        <button class="md-tab active" onclick="tabSwitchStep('sn${idx}',this,'write')">Skriv</button>
+        <button class="md-tab" onclick="tabSwitchStep('sn${idx}',this,'preview')">Forhåndsvis</button>
+      </div>
+      <div class="md-toolbar">
+        <button class="md-btn" onclick="fmt('sn${idx}','bold')"><b>F</b></button>
+        <button class="md-btn" onclick="fmt('sn${idx}','italic')"><i>K</i></button>
+        <div class="md-sep"></div>
+        <button class="md-btn" onclick="fmt('sn${idx}','link')">🔗 Lenke</button>
+      </div>
+      <textarea class="md-textarea" id="sn${idx}" rows="2" placeholder="Valgfri forklaring av hensikten med trinnet">${nv}</textarea>
+      <div class="md-preview md-body" id="sn${idx}Prev"></div>
+    </div>
+  </div>`;
+}
+
+function openModal(id=null) {
+  editingId=id; stepCount=0;
+  document.getElementById('modalTitle').textContent=id?'Rediger prosess':'Ny prosess';
+  const p=id?processes.find(x=>x.id===id):null;
+  document.getElementById('fTitle').value=p?p.title:'';
+  document.getElementById('fIcon').value=p?(p.icon||')':'';
+  const ta=document.getElementById('fDesc'), prev=document.getElementById('fDescPrev');
+  ta.value=p?(p.description||')':''; ta.style.display='block'; prev.style.display='none';
+  document.querySelectorAll('#modalOverlay .md-tabs')[0]?.querySelectorAll('.md-tab').forEach((t,i)=>t.classList.toggle('active',i===0));
+  const ed=document.getElementById('stepsEditor'); ed.innerHTML='';
+  (p?p.steps:[]).forEach((s,i)=>{stepCount=i+1; ed.insertAdjacentHTML('beforeend',stepHtml(i,s));});
   document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow='hidden';
 }
 
 function closeModal(e) {
-  if (e && e.target !== document.getElementById('modalOverlay')) return;
+  if(e&&e.target!==document.getElementById('modalOverlay')) return;
   document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-  editingId = null;
+  document.body.style.overflow=''; editingId=null;
 }
 
-function addStepField(s = null) {
-  const editor = document.getElementById('stepsEditor');
-  const idx = editor.children.length + 1;
-  const div = document.createElement('div');
-  div.className = 'step-edit-item';
-  div.innerHTML = `
-    <div class="step-edit-header">
-      <span>Trinn ${idx}</span>
-      <button class="remove-step-btn" onclick="this.closest('.step-edit-item').remove(); renumberSteps()">✕</button>
-    </div>
-    <input type="text" placeholder="Tittel på trinnet" value="${s ? esc(s.title) : ''}">
-    <textarea placeholder="Beskrivelse av hva som gjøres i dette trinnet">${s ? esc(s.desc) : ''}</textarea>
-    <textarea class="note-field" placeholder="Valgfri forklaring / hensikt med trinnet (vises som gult tips)">${s ? esc(s.note || '') : ''}</textarea>
-  `;
-  editor.appendChild(div);
+function addStep() {
+  const ed=document.getElementById('stepsEditor');
+  ed.insertAdjacentHTML('beforeend',stepHtml(stepCount,null));
+  stepCount++;
 }
 
-function renumberSteps() {
-  document.querySelectorAll('.step-edit-item').forEach((el, i) => {
-    el.querySelector('.step-edit-header span').textContent = `Trinn ${i+1}`;
+function renumber() {
+  document.querySelectorAll('.step-edit-item').forEach((el,i)=>{
+    el.querySelector('.step-edit-header span').textContent=`Trinn ${i+1}`;
   });
 }
 
 function saveProcess() {
-  const title = document.getElementById('fTitle').value.trim();
-  if (!title) { alert('Prosessen må ha en tittel.'); return; }
-  const icon = document.getElementById('fIcon').value.trim() || '📄';
-  const description = document.getElementById('fDesc').value.trim();
-  const stepEls = document.querySelectorAll('.step-edit-item');
-  const steps = [];
-  stepEls.forEach(el => {
-    const inputs = el.querySelectorAll('input, textarea');
-    const t = inputs[0].value.trim();
-    if (t) steps.push({ title: t, desc: inputs[1].value.trim(), note: inputs[2].value.trim() });
+  const title=document.getElementById('fTitle').value.trim();
+  if(!title){alert('Prosessen må ha en tittel.');return;}
+  const icon=document.getElementById('fIcon').value.trim()||'📄';
+  const description=document.getElementById('fDesc').value.trim();
+  const steps=[];
+  document.querySelectorAll('.step-edit-item').forEach((el,i)=>{
+    const t=el.querySelector('.step-title-input')?.value.trim();
+    const d=document.getElementById('sd'+i)?.value.trim()||'';
+    const n=document.getElementById('sn'+i)?.value.trim()||'';
+    if(t) steps.push({title:t,desc:d,note:n});
   });
-  if (editingId) {
-    const idx = processes.findIndex(x => x.id === editingId);
-    if (idx > -1) processes[idx] = { ...processes[idx], title, icon, description, steps };
+  if(editingId) {
+    const idx=processes.findIndex(x=>x.id===editingId);
+    if(idx>-1) processes[idx]={...processes[idx],title,icon,description,steps};
   } else {
-    const newId = Math.max(0, ...processes.map(x => x.id)) + 1;
-    processes.push({ id: newId, title, icon, description, steps });
+    const newId=Math.max(0,...processes.map(x=>x.id))+1;
+    processes.push({id:newId,title,icon,description,steps});
   }
   document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-  editingId = null;
-  renderDashboard();
-  saveJSON();
+  document.body.style.overflow=''; editingId=null;
+  renderDashboard(); saveJSON();
 }
 
 function deleteProcess(id) {
-  const p = processes.find(x => x.id === id);
-  if (!confirm(`Slett prosessen «${p?.title}»?`)) return;
-  processes = processes.filter(x => x.id !== id);
-  renderDashboard();
-  saveJSON();
+  const p=processes.find(x=>x.id===id);
+  if(!confirm(`Slett prosessen «${p?.title}»?`)) return;
+  processes=processes.filter(x=>x.id!==id);
+  renderDashboard(); saveJSON();
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closePanel();
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closePanel();document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
 });
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-// Init: check session
-if (sessionStorage.getItem('admin_auth') === '1') loadProcesses();
+if(sessionStorage.getItem('admin_auth')==='1') loadProcesses();
 </script>
 </body>
 </html>
