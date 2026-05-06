@@ -141,6 +141,7 @@
   #exportBanner strong { display: block; margin-bottom: 6px; }
   #exportBanner code { font-size: 0.82rem; background: rgba(255,255,255,0.12); padding: 3px 7px; border-radius: 4px; }
   #exportBanner .close-banner { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; float: right; margin-top: -28px; font-size: 1.1rem; }
+  #toast { position: fixed; bottom: 80px; right: 24px; background: var(--accent); color: white; padding: 10px 18px; border-radius: 8px; font-size: 0.9rem; z-index: 400; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
 
   @media(max-width:600px) {
     header, .search-bar, #dashboard { padding-left: 18px; padding-right: 18px; }
@@ -212,12 +213,14 @@
           <button class="md-btn" onclick="fmt('fDesc','ol')">1. Liste</button>
           <div class="md-sep"></div>
           <button class="md-btn" onclick="fmt('fDesc','link')">🔗 Lenke</button>
-          <button class="md-btn" onclick="fmt('fDesc','img')">🖼 Bilde</button>
+          <button class="md-btn" onclick="fmt('fDesc','img')">🌐 Bilde (URL)</button>
+          <button class="md-btn" onclick="triggerImgUpload('fDesc')">📁 Last opp bilde</button>
         </div>
         <textarea class="md-textarea" id="fDesc" rows="4" placeholder="Beskriv prosessen. Bruk **fet**, *kursiv*, [lenke](https://url) og ![bilde](https://bilde-url)"></textarea>
         <div class="md-preview md-body" id="fDescPrev"></div>
       </div>
       <div class="md-hint">Tips: <code>**fet**</code> &nbsp;<code>*kursiv*</code> &nbsp;<code>[lenketekst](https://url)</code> &nbsp;<code>![alt](https://bilde.jpg)</code> &nbsp;<code>- punkt</code></div>
+      <input type="file" id="imgUploadDesc" accept="image/*" style="display:none" onchange="handleImgUpload(event,'fDesc')">
     </div>
     <div class="form-row">
       <label>Trinn i gjennomføringen</label>
@@ -236,6 +239,7 @@
   <strong>📥 Last opp til GitHub</strong>
   Erstatt <code>processes.json</code> i repositoryet ditt med den nedlastede filen.
 </div>
+<div id="toast"></div>
 
 <script>
 const ADMIN_PASSWORD = 'Pernilletupp1';
@@ -315,7 +319,44 @@ function fmt(taId, type) {
   ta.focus(); ta.selectionStart=ta.selectionEnd=s+ins.length;
 }
 
-// ── DASHBOARD ──
+// ── IMAGE UPLOAD ──
+function triggerImgUpload(taId) {
+  const inputId = 'imgUpload' + taId.charAt(0).toUpperCase() + taId.slice(1);
+  document.getElementById(inputId)?.click();
+}
+
+function triggerStepImgUpload(taId) {
+  document.getElementById('imgUpload_' + taId)?.click();
+}
+
+function handleImgUpload(event, taId) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const MAX_BYTES = 600 * 1024; // 600 KB
+  if (file.size > MAX_BYTES) {
+    alert(`Bildet er for stort (${(file.size/1024).toFixed(0)} KB). Maks anbefalt størrelse er 600 KB for å holde processes.json håndterlig. Komprimer bildet og prøv igjen.`);
+    event.target.value = '';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const base64 = e.target.result; // data:image/...;base64,...
+    const ta = document.getElementById(taId);
+    if (!ta) return;
+    const altText = file.name.replace(/\.[^.]+$/, '');
+    const mdImg = `\n![${altText}](${base64})\n`;
+    const pos = ta.selectionStart ?? ta.value.length;
+    ta.value = ta.value.substring(0, pos) + mdImg + ta.value.substring(pos);
+    ta.focus();
+    // Show size info
+    const kb = (file.size/1024).toFixed(0);
+    showToast(`✅ Bilde lagt inn (${kb} KB)`);
+  };
+  reader.readAsDataURL(file);
+  event.target.value = ''; // reset so same file can be re-uploaded
+}
 let dragSrcId = null;
 
 function renderDashboard() {
@@ -437,10 +478,12 @@ function stepHtml(idx, s, total) {
         <button class="md-btn" onclick="fmt('sd${idx}','ul')">• Liste</button>
         <div class="md-sep"></div>
         <button class="md-btn" onclick="fmt('sd${idx}','link')">🔗 Lenke</button>
-        <button class="md-btn" onclick="fmt('sd${idx}','img')">🖼 Bilde</button>
+        <button class="md-btn" onclick="fmt('sd${idx}','img')">🌐 Bilde (URL)</button>
+        <button class="md-btn" onclick="triggerStepImgUpload('sd${idx}')">📁 Last opp</button>
       </div>
       <textarea class="md-textarea" id="sd${idx}" rows="3" placeholder="Hva gjøres i dette trinnet?">${dv}</textarea>
       <div class="md-preview md-body" id="sd${idx}Prev"></div>
+      <input type="file" id="imgUpload_sd${idx}" accept="image/*" style="display:none" onchange="handleImgUpload(event,'sd${idx}')">
     </div>
     <div class="step-field-label">Hensikt / tips <span style="font-weight:400;text-transform:none;letter-spacing:0">(vises som gult tips)</span></div>
     <div class="md-editor-wrap">
@@ -554,6 +597,12 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){closePanel();document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
 });
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.opacity = '1';
+  setTimeout(() => { t.style.opacity = '0'; }, 2500);
+}
 
 if(sessionStorage.getItem('admin_auth')==='1') loadProcesses();
 </script>
