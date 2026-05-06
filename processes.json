@@ -1,12 +1,5 @@
 [
   {
-    "id": 16,
-    "title": "SAMLINGER",
-    "icon": "📄",
-    "description": "",
-    "steps": []
-  },
-  {
     "id": 1,
     "icon": "🧭",
     "title": "SØKEKONFERANSE - en medvirkningsbasert strategiprosess",
@@ -159,13 +152,6 @@
     ]
   },
   {
-    "id": 18,
-    "title": "ORGANISERING",
-    "icon": "📄",
-    "description": "",
-    "steps": []
-  },
-  {
     "id": 11,
     "title": "EN STØRRE OMSTILLING/ENDRING - designe, gjennomføre, lede",
     "icon": "📄",
@@ -275,20 +261,6 @@
     ]
   },
   {
-    "id": 17,
-    "title": "TBD",
-    "icon": "📄",
-    "description": "",
-    "steps": []
-  },
-  {
-    "id": 19,
-    "title": "FORBEDRINGSARBEID OG GOD DRIFT",
-    "icon": "📄",
-    "description": "",
-    "steps": []
-  },
-  {
     "id": 9,
     "title": "FORBEDRINGSGRUPPER - Bruk forbedringsgrupper til å organisere for kontinuerlig forbedring med de ansatte i førersetet",
     "icon": "📄",
@@ -351,20 +323,6 @@
         "note": "Selve møtet kan gjennomføres i mange varianter, men hensikten bør holdes fast:\n- Å rydde raskt i forhold som kan skape unødig krevende arbeidsuke for den enkelte\n- Å bidra til at alle for et helhetsbilde av de hverdagslige oppgavene og utfordringene til helle gruppen/avdelingen/prosjektet\n- Å holde møtetiden på en minimum. Å gjennomføre hele møtet bør ta max en halvtime, hvis det er ca 10-15 ansatte"
       }
     ]
-  },
-  {
-    "id": 22,
-    "title": "TBD",
-    "icon": "📄",
-    "description": "",
-    "steps": []
-  },
-  {
-    "id": 20,
-    "title": "TEAM OG UTVIKLINGSPROSESSER",
-    "icon": "📄",
-    "description": "",
-    "steps": []
   },
   {
     "id": 2,
