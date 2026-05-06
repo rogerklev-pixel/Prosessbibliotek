@@ -77,10 +77,41 @@
   },
   {
     "id": 7,
-    "title": "VERDENSKAFE",
+    "title": "VERDENSKAFE - Å dele erfaringer og skape mer felles forståelse",
     "icon": "📄",
-    "description": "",
-    "steps": []
+    "description": "Verdenskafeen er en arbeidsform som understøtter erfaringsdeling og felles refleksjoner mellom de som deltar. Ideen bygger på erkjennelsen av at mens mange møter og seminarer kan ha en form som gjør at de fleste deltakere foretrekker å forholde seg passive, så ser vi alltid at med engang det er en kaffepause så flyter samtalene lett og uanstrengt mellom alle :) Vel, så la oss prøve å gjenskape opplevelsen av \"kaffepausen\" for å skape mange, gode og viktige diskusjoner der alle deltar og deler.\nDen andre erkjennelsen arbeidsformen bygger på er at deling av ideer og erfaringer flyter mye lettere når vi sitter sammen og snakker med hverandre, enn når vi lager formelle presentasjoner for hverandre. I verdenskafeen har vi derfor minimalt eller ingen plenumspresentasjoner, og stoler på at samtalene ved bordene gjør jobben med å å dele ideene/erfaringene",
+    "steps": [
+      {
+        "title": "Forberedelser og forutsetninger",
+        "desc": "Passer for fra 25 og oppover til kanskje rundt 90-100 deltakere\n\nFinn et flatt rom med (helst) runde/kvadratiske \"kafebord\" med grei plass for 6-8 personer rundt hvert bord. Antall bord bestemmes av antall deltakere, og det kan være greit å tenke ett bord per 6-8 deltakere\n\nRekrutter en kafevert til hvert bord i forkant. Hvis du ikke rekker å finne kafevertene i forkant, går det også greit å peke de ut ved oppstart. Rollen til kafevertene er ikke mer komplisert enn at de fleste tar det greit på sparket\n\nLegg en papirduk eller et par flipover-ark på hvert bord, samt noen tusjer i ulike farger. Poenget er at det settingen skal inpirere til at de som vil, kan skrive og tegne på \"duken\"",
+        "note": ""
+      },
+      {
+        "title": "Innledning - tema for kafeen",
+        "desc": "Tema for verdenskafeen presenteres gjerne av en leder som har en naturlig rolle i å sette i gang de prosessene som verdenskafeen er starten på eller en del av. Etter å ha sagt noe om bakgrunnen for akkurat denne runden, kan innlederen gjerne formulere tema som et spørsmål, for eksempel \"Hvorfor er det viktig at vi ....?\", eller \"Hva opplever vi som styrker og svakheter ved måten vi ....?\"\n\nProsessleder forklarer hvordan verdenskafeen fungerer, og legger spesielt vekt på fire ting:\n* Kafevertens rolle som den eneste som blir sittende ved sitt bord gjennom hele prosessen, og som introduserer nye besøkende til de tema som tidligere gruppe(r) var opptatt av\n* At alle svært gjerne kan skrive på duken. Kafeverten vil naturlig gjøre det, for å ha et godt utgangspunkt for å fortelle nye besøkende hva som har vært diskusjonstema så langt\n* At deltakerne ikke skal gå til neste bord i samlet flokk, men spre seg rundt til ulike nye bord\n* At prosessen handler mest om diskusjonene rundt bordene, og at det blir minimalt oppsummering i plenum etterpå",
+        "note": "Sette scenen og stemningen, og avklare tema"
+      },
+      {
+        "title": "Første runde ved kafebordene",
+        "desc": "Deltakerne fordeler seg tilfeldig til første kafediskusjon. Kafeverten ønsker alle besøkende ved bordet velkommen, og lar alle først bruke et minutt på å tenke gjennom tema og tenke på og notere stikkord for egne innspill. Deretter leder kafeverten gjennom en kort runde der alle får sagt noe om hva de tenker om temaet. Eller en full runde går diskusjonen fritt videre, dit det største engasjementet og energien er. Kafeverten oppfordrer alle til å bruke tusjer og skrive på duken, og skriver selv en del for å kunne fortelle om diskusjonene til nye gjester i neste runde.",
+        "note": "Å sikre at diskusjonene kommer godt i gang, og at alle, som et utgangspunkt, har fått bidra med noe inn i den første diskusjonen"
+      },
+      {
+        "title": "Andre kaferunde",
+        "desc": "Etter ca 25-30 minutter gir prosessleder signal om at alle utenom kafevertene skal reise seg og spre seg rundt til ulike nye bord. Kafeverten ønsker de nye gjestene ved bordet velkommen, og starter med å bruke stikkord og tegninger på duken til å oppsummerte hva som var de viktigste diskusjonene ved bordet i første runde. Deretter slippes de nye gjestene fritt til, og diskusjonen går dit det er energi og engasjement i gruppen, uten særlig styring fra kafeverten. Kafeverten oppfordrer igjen alle til å bruke tusj og tegne og skrive stikkord på duken.",
+        "note": "Å dele erfaringer, komme dypere i noen diskusjoner, og skape noen nye diskusjonstråder"
+      },
+      {
+        "title": "Tredje og siste kaferunde",
+        "desc": "Etter nye ca 25 minutter gir prosessleder signal om at alle utenom kafevertene skal reise seg og spre seg rundt til ulike nye bord. Kafevertene ønsker igjen de nye gjestene ved bordet velkommen, og starter med å bruke stikkord og tegninger på duken til å oppsummerte hva som var de viktigste diskusjonene ved bordet i de to foregående rundene. Deretter slippes de nye gjestene fritt til, og diskusjonen går dit det er energi og engasjement i gruppen, uten særlig styring fra kafeverten. Kafeverten oppfordrer igjen alle til å bruke tusj og tegne og skrive stikkord på duken.",
+        "note": "Å dele erfaringer, komme dypere i noen diskusjoner, og skape noen nye diskusjonstråder"
+      },
+      {
+        "title": "Oppsummering og avslutning",
+        "desc": "Etter nye 20-25 minutter med diskusjoner gir prosessleder signal om at runden er ferdig, og at dette også er avslutningen på denne verdenskafeen. Det trengs ingen presentasjoner i plenum for å dele informasjon, men det kan være en god avrunding av prosessen at hver av kafevertene kort sier noe om hvilket tema som de opplever har skapt mest diskusjon ved akkurat deres bord.\n\nProsessleder eller leder takker alle for deltakelsen, og avslutter verdenskafeen\n\nDersom virksomheten har behov for en eller annen form for dokumentasjon/rapportering, kan dette gjøres ved at kafevertene leverer inn duken fra sitt bord, samt skriver en kort oppsummering av diskusjonen.",
+        "note": "Å lage en god avrunding som lukker prosessen"
+      }
+    ]
   },
   {
     "id": 8,
