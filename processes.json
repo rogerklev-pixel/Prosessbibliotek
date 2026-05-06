@@ -48,40 +48,62 @@
     ]
   },
   {
-    "id": 2,
-    "icon": "🤝",
-    "title": "Teamcoaching",
-    "description": "En fasilitert prosess der teamet jobber med samspill, kommunikasjon og felles praksis for å øke effektivitet og trivsel. Kan gjennomføres som enkeltøkt eller et løp over tid.",
+    "id": 6,
+    "title": "KARUSELLEN - Dele innsikt på tvers av satsinger, prosjekter eller organisasjonsenheter",
+    "icon": "📄",
+    "description": "Karusellen er en enkel arbeidsform for å dele informasjon mellom ulike enheter, for eksempel mellom avdelinger/grupper som ellers jobber avgrenset fra hverandre. Det kan for eksempel være informasjonsdeling mellom ulike skoler i en kommune, ulike trinn/avdelinger på samme skole, mellom en skole og andre enheter/fagmiljø skolen samhandler med, eller det kan være mellom ulike satsinger som vil ha nytte av å bli bedre kjent med hverandre.\nEtter at forberedelsene er gjort, er selve gjennomføringen svært enkel, og det kreves veldig lite prosesserfaring å gjennomføre den.",
     "steps": [
       {
-        "title": "Kartlegging av teamets nåsituasjon",
-        "desc": "Samle inn data om teamets fungering via samtaler, observasjon eller spørreskjema. Hva opplever teammedlemmene?",
-        "note": "Anonymiserte innspill gir ofte mer ærlige svar enn åpne spørsmål i plenum."
+        "title": "Velkommen og eventuelle siste klargjøringer",
+        "desc": "Prosessveileder ønsker alle velkommen, og beskriver hvordan denne prosessen vil bli gjennomført de neste 1-2 timene.\nProsessleder sikrer at gruppene etableres, noe som er helt eller delvis forberedt på forhånd. Det viktigste er at hver gruppe har minst én deltaker fra hver enhet som er representert med en stand, og at denne deltakeren er forberedt på å presentere når gruppen kommer fram til den riktige standen. Og; i utgangspunktet er dette en prosess der alle deltakere står eller går hele tiden, men det kan være klokt å ha noen stoler tilgjengelig dersom noen har problemer med å stå så lenge",
+        "note": "Forberede eller minne deltakerne på arbeidsformen"
       },
       {
-        "title": "Tilbakemelding og refleksjon",
-        "desc": "Del funnene med teamet. Skap rom for refleksjon: hva kjenner de igjen, hva overrasker dem?",
+        "title": "Oppstart, første stand",
+        "desc": "Alle gruppene starter foran en stand, og i hver gruppe vil det være en person som er klar til å si noe med utgangspunkt i de stikkordene eller figurene/bildene som finnes på de forberedte plakatene/flipoverne. Den som presenterer bruker ca 4-5 minutter på å innlede, og de neste ca 15 minuttene er det en åpen samtale eller diskusjon mellom den som presenterer og de andre deltakerne, eventuelt bare mellom de andre deltakerne, om det som er presentert om enheten på denne standen. Etter at tiden, totalt 20 minutter, er gått, gis et signal, og alle gruppene beveger seg med klokken til neste enhet/stand",
         "note": ""
       },
       {
-        "title": "Identifiser utviklingsområder",
-        "desc": "Bli enige om hvilke temaer teamet vil jobbe med. Prioriter 2–3 fokusområder.",
+        "title": "En vandring fra stand til stand hvert 20. minutt",
+        "desc": "Når alle gruppene kommer til hver sin nye stand, vil nye medlemmer av gruppene være klare til å innlede med å presentere for sine respektive enheter. Prosessleder gir et signal hvert 20 minutt, og gruppene vil gå til neste stand og starte uten flere instrukser for hver gang",
+        "note": "Bli kjent med alle enhetene/stands'ene etter tur"
+      },
+      {
+        "title": "Avslutning",
+        "desc": "Når alle gruppene har vært innom alle stands, er karusellen over og prosessleder takker alle for deltakelsen.",
+        "note": "Å runde av prosessen og bidra til at de som har bidratt blir sett og anerkjent"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "VERDENSKAFE",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
+    "id": 8,
+    "title": "OPEN SPACE - en samlingsbasert prosess for å initiere utviklingstiltak \"nedenfra og opp\"",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
+    "id": 2,
+    "icon": "🤝",
+    "title": "Ledere coacher ledere",
+    "description": "Mange ledere har få muligheter i hverdagen til å diskutere konkrete utfordringer med andre som erfaring fra samme samme rolle og kanskje lignende situasjoner. Et er et viktig poeng er at denne arenaen ikke handler om generelle tema og utfordringer, som vi lett kan diskutere med mange, men konkrete lederutfordringer, her og nå",
+    "steps": [
+      {
+        "title": "Forberedelser og forutsetninger",
+        "desc": "* Passer for 4-6 ledere med noenlunde like lederroller\n* Hver deltaker tenker gjennom, før de møtes: Tenk gjennom en eller flere konkrete utfordringer som du har som leder i dag. Hva er det som tar mest av din energi Hva tenker du på kveld og natt? Hva er du mest usikker på?",
         "note": ""
       },
       {
-        "title": "Prosess og øvelser",
-        "desc": "Gjennomfør strukturerte aktiviteter som adresserer fokusområdene. Bruk dialogkort, rollespill, tilbakemeldingsøvelser e.l.",
-        "note": "Veksle mellom plenumsarbeid og par-/gruppearbeid for å engasjere alle."
-      },
-      {
-        "title": "Lage avtaler og forpliktelser",
-        "desc": "Hva skal teamet gjøre annerledes? Skriv ned konkrete avtaler som teamet holder hverandre ansvarlig for.",
-        "note": "Spesifikke, observerbare avtaler fungerer langt bedre enn vage intensjoner."
-      },
-      {
-        "title": "Evaluering og oppfølging",
-        "desc": "Planlegg neste møtepunkt og avklar hvordan dere skal følge opp avtalene som er inngått.",
-        "note": ""
+        "title": "Gjennomføring av coachingen",
+        "desc": "En leder starter med å fortelle om sin utfordring, så konkret som mulig.\nDe andre skal lytte, spørre etter utdyping og klargjøring, og være sikre på at de forstår utfordringen problemeier opplever\nDeretter engasjerer hele gruppen seg i denne utfordringen gjennom å reflektere sammen, teste andre forståelse og nye perspektiv, spille inn med egne erfaringer, forslag til løsninger, etc.\nGruppen må selv finne ut når dere er ”ferdige”\nDeretter er det neste person i gruppen som legger fram sin utfordring, og ny runde.\nProsessen avsluttes når alle har fått delt sine utfordringer, eller ved tidspunkt avklart på forhånd",
+        "note": "Å hjelpe hverandre med konkrete lederutfordringer\nÅ skape trygghet gjennom opplevelse av at andre forstår og gjenkjenner mine utfordringer\nÅ kunne reflektere over generelle utfordringer i lederrollen, som kommer til syne i det enkelte case"
       }
     ]
   },
@@ -181,34 +203,6 @@
         "title": "Eventuelt og utsjekk",
         "desc": "Gi rom for korte innspill. Avslutt med en rask utsjekk: hva tar vi med oss herfra?",
         "note": ""
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "title": "KARUSELLEN - Dele innsikt på tvers av satsinger, prosjekter eller organisasjonsenheter",
-    "icon": "📄",
-    "description": "Karusellen er en enkel arbeidsform for å dele informasjon mellom ulike enheter, for eksempel mellom avdelinger/grupper som ellers jobber avgrenset fra hverandre. Det kan for eksempel være informasjonsdeling mellom ulike skoler i en kommune, ulike trinn/avdelinger på samme skole, mellom en skole og andre enheter/fagmiljø skolen samhandler med, eller det kan være mellom ulike satsinger som vil ha nytte av å bli bedre kjent med hverandre.\nEtter at forberedelsene er gjort, er selve gjennomføringen svært enkel, og det kreves veldig lite prosesserfaring å gjennomføre den.",
-    "steps": [
-      {
-        "title": "Velkommen og eventuelle siste klargjøringer",
-        "desc": "Prosessveileder ønsker alle velkommen, og beskriver hvordan denne prosessen vil bli gjennomført de neste 1-2 timene.\nProsessleder sikrer at gruppene etableres, noe som er helt eller delvis forberedt på forhånd. Det viktigste er at hver gruppe har minst én deltaker fra hver enhet som er representert med en stand, og at denne deltakeren er forberedt på å presentere når gruppen kommer fram til den riktige standen. Og; i utgangspunktet er dette en prosess der alle deltakere står eller går hele tiden, men det kan være klokt å ha noen stoler tilgjengelig dersom noen har problemer med å stå så lenge",
-        "note": "Forberede eller minne deltakerne på arbeidsformen"
-      },
-      {
-        "title": "Oppstart, første stand",
-        "desc": "Alle gruppene starter foran en stand, og i hver gruppe vil det være en person som er klar til å si noe med utgangspunkt i de stikkordene eller figurene/bildene som finnes på de forberedte plakatene/flipoverne. Den som presenterer bruker ca 4-5 minutter på å innlede, og de neste ca 15 minuttene er det en åpen samtale eller diskusjon mellom den som presenterer og de andre deltakerne, eventuelt bare mellom de andre deltakerne, om det som er presentert om enheten på denne standen. Etter at tiden, totalt 20 minutter, er gått, gis et signal, og alle gruppene beveger seg med klokken til neste enhet/stand",
-        "note": ""
-      },
-      {
-        "title": "En vandring fra stand til stand hvert 20. minutt",
-        "desc": "Når alle gruppene kommer til hver sin nye stand, vil nye medlemmer av gruppene være klare til å innlede med å presentere for sine respektive enheter. Prosessleder gir et signal hvert 20 minutt, og gruppene vil gå til neste stand og starte uten flere instrukser for hver gang",
-        "note": "Bli kjent med alle enhetene/stands'ene etter tur"
-      },
-      {
-        "title": "Avslutning",
-        "desc": "Når alle gruppene har vært innom alle stands, er karusellen over og prosessleder takker alle for deltakelsen.",
-        "note": "Å runde av prosessen og bidra til at de som har bidratt blir sett og anerkjent"
       }
     ]
   }
