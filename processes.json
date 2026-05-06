@@ -303,5 +303,82 @@
         "note": "Å hjelpe hverandre med konkrete lederutfordringer\nÅ skape trygghet gjennom opplevelse av at andre forstår og gjenkjenner mine utfordringer\nÅ kunne reflektere over generelle utfordringer i lederrollen, som kommer til syne i det enkelte case"
       }
     ]
+  },
+  {
+    "id": 12,
+    "title": "TEAMKONTRAKT / PSYKOLOGISK KONTRAKT",
+    "icon": "📄",
+    "description": "I arbeidsfellesskap og arbeidsrelasjoner skapes det uformelle sosiale regler om hva som er greit, hva som er viktig, hva som er uønsket eller blir vanskelig og så videre. Vi har forventninger til hverandre som personer og i bestemte roller, og vi kan reagere (svært) negativt dersom disse forventningene brytes. Disse sosiale reglene og forventningene utgjør en \"psykologisk kontrakt\" mellom oss som er en del av arbeidsfellesskapet.\nProsessen med å lage en teamkontrakt handler om å gjøre den psykologiske kontrakten vi uansett kommer til å utvikle, til en eksplisitt kontrakt som gjenspeiler hvordan vi ønsker å samhandle, og som tas fram og diskuteres og revideres jevnlig, og/eller når det oppstår behov for det",
+    "steps": [
+      {
+        "title": "Forberedelser og forutsetninger",
+        "desc": "Ingen spesielle nødvendige forberedelser eller forutsetninger. En mulig forberedelse er at du i rollen som prosessleder lager en liste på forhånd med tema/eksempler som viser hva en teamkontrakt kan handle om, og dele ut den som inspirasjon i den første individuelle økta.",
+        "note": ""
+      },
+      {
+        "title": "Individuelt",
+        "desc": "Hver enkelt bruker noen minutter hver for seg, og tenker gjennom 2-3 punkter som han/hun ønsker å fremme som et punkt i teamkontrakten. Hvis du vil, kan du gjerne lage et ark med tema/punkter som inspirasjon for den enkelte til å tenke gjennom egne innspill til teamkontrakten",
+        "note": "For at hver enkelt medlem i teamet skal \"eie\" den ferdige teamkontrakten, er det også viktig at den enkelte får tid til å først tenke gjennom selv hva han/hun mener er viktig for at teamet skal fungere godt"
+      },
+      {
+        "title": "Runde i teamet",
+        "desc": "Du starter med en runde i teamet, og ett og ett punkt diskuteres om gangen. Unngå at den som starter får lov til å spille inn mange/alle punktene før andre slipper til. Et innspill fra hvert medlem om gangen, og flere runder så lenge det er flere innspill. Den første foreslår ett punkt, og hele teamet tar stilling til forslaget og diskuterer, foreslår endringer eller sier seg uenig. Dersom teamet er uenig etter å ha diskutert det seriøst, er ikke dette punktet en del av teamkontrakten, men et punkt teamet nå vet de må komme tilbake til senere. Dersom teamet er enig, skriver du dette ned som et punkt i teamkontrakten.",
+        "note": "Sikre at teamkontrakten både er og oppleves som et felles produkt"
+      },
+      {
+        "title": "Oppsummering og avslutning",
+        "desc": "Etter at runden er avsluttet, oppsummerer du hva dere som team har kommet fram til som teamkontrakt, og forklarer at denne nå vil renskrives og sendes ut til alle i teamet.",
+        "note": "Å skape felles forståelse av hva som er teamkontrakten, hvordan den skal brukes videre, og at den kommer til å kunne endres"
+      },
+      {
+        "title": "Bruk teamkontrakten",
+        "desc": "Ved fremtidige møter eller arbeidsøkter vil du nå og da sette av tid til å ta fram kontrakten, og bruke den som et utgangspunkt når dere reflekterer over hvordan teamet fungerer. Dersom dere ikke har samhandlet som avtalt i teamkontrakten kan dette danne utgangspunkt for å diskutere \"hva trenger vi å gjøre for å få dette til å fungere bedre i praksis?\" eller dere kan bli enige om at det er teamkontrakten som bør justeres basert på disse erfaringene",
+        "note": "Bruke teamkontrakten som et verktøy for jevnlige og gode refleksjoner rundt hvordan dere faktisk jobber som team"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "INNSJEKK - starten på en arbeidsøkt eller et møte i teamet",
+    "icon": "📄",
+    "description": "\"Innsjekk\" er en enkel rutine før oppstart av et et møte eller arbeidsøkt, for å bidra til at \"kobler seg på\" teamet og arbeidsøkten og er klare til å bidra.",
+    "steps": [
+      {
+        "title": "Gjennomføre innsjekk",
+        "desc": "Ved starten av møtet eller arbeidsøkta kan leder enten ganske enkelt innlede med å spørre: \"Velkommen til møtet, da går vi i gang. Er vi alle helt til stede og klare til innsats?\" Eventuelt utvide med: \"Har det skjedd noe hos noen av dere siden sist eller nå før møtet, som tar energi og oppmerksomhet og som det kan være greit å dele med andre?\" Og i en enda mer grundig innsjekk tar lederen en runde i gruppa og ber alle si noe om for eksempel deres forventninger til dagens møte/arbeidsøkt og samtidig om det har skjedd noe den enkelte vil dele med teamet før oppstart.",
+        "note": "Å skape best mulig start på møtet eller arbeidsøkta, gjennom å bidra til at hver enkelt blir ferdige med eventuelle andre tema som har tatt energi og oppmerksomhet, og at oppmerksomheten flyttes over på her og nå og på de oppgavene teamet skal jobbe med nå."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "UTSJEKK - slutten på et møte eller en arbeidsøkt i et team",
+    "icon": "📄",
+    "description": "En \"utsjekk\" er en betegnelse på en runde i teamet ved avslutning av en arbeidsøkt eller et møte, for å la alle få anledning til å si noe om hvordan teamet jobbet og hvordan jeg som teammedlem opplevde møtet/arbeidsøkta. Kan relateres til teamkontrakten - jobbet vi slik vi har vært enige om å jobbe? Og det kan være en mulighet for teamleder å starte utsjekkrunden for å sette en positiv standard for at det er \"lov\" å reflektere over både positive og negative opplevelser med teamarbeidet",
+    "steps": [
+      {
+        "title": "Gjennomføring av utsjekk",
+        "desc": "Ved avslutning av arbeidsøkt eller møte kan teamleder be om en runde i teamet slik at alle kan si noe om hvordan de har opplevd økta eller møtet. Teamleder passer på at dette ikke starter like før fastsatt sluttidspunkt, slik at teamet opplever at det ikke er tidspress som hindrer de å si fra hvis de har noe viktig på hjertet. Et utgangspunkt for runden kan for eksempel være om vi jobber etter teamkontrakten, eller det kan være mer åpent \"Hvordan opplevde du møtet/arbeidsøkta i dag?\" Teamleder sine egne refleksjoner vil sette en standard for hva mange andre teammedlemmer vil oppleve at det er OK å ta opp i en slik runde",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "AKTIV LYTTING - å lytte, ikke bare høre på",
+    "icon": "📄",
+    "description": "Aktiv lytting kan ses på som en teknikk når vi snakker med andre mennesker, men vi kan like gjerne se på det som å utvikle en holdning eller tilnærming til samtaler med andre.\nÅ trene på aktiv lytting kan virke teknisk og kunstig, men det handler mest om å utvikle eller endre en vane, og når vi er «utsatt for» noen som har det som vane å lytte aktivt, opplever vi bare en god samtale, og ikke en teknikk.\n\nPoenget med å lytte er å ikke bare høre hva den andre sier, men å virkelig forstå hva den andre mener. Når vi hekter på ordet «aktiv», så er det fordi god lytting ikke bare er en indre prosess, men skapes eller forbedres av aktive handlinger, av noe vi gjør eller ikke gjør. Og aktiv lytting handler ikke bare om å forstå, men også om at den andre opplever å bli hørt og forstått.\n\nTil sist; det å lytte aktivt er ikke viktig bare når det er ukontroversielle tema. Nærmest tvert imot. Det å lytte til og å forstå andre er ikke det samme som å være enige. Men vi lager et bedre utgangspunkt for å snakke med noen vi er uenige med, dersom vi lytter aktivt. Det er aldri galt å forstå hva den andre mener, og det er mye enklere å takle uenighet når vi selv opplever å selv bli forstått (ikke bare hørt).",
+    "steps": [
+      {
+        "title": "Tips for aktiv lytting",
+        "desc": "Oppmerksomhet - se på den andre, ha nok øyekontakt til at den andre forstår at det er han/hun du følger med på, og at du ikke egentlig har tankene et annet sted\n\nKroppsspråk - Kroppsspråk kommuniserer åpenbart veldig mye til den andre, og det kan også påvirke din egen holdning til samtalen.\n\nHjelpende spørsmål - \"kan du si mer om...?\", \"kan du fortelle om et eksempel på...?\"\n\nSpeile tilbake det du har forstått, omformulere - den andre er mye sikrere på at du både lytter og forstår, dersom du er stand til å reformulere det den andre har sagt med dine egne ord. For eksempel: \"Slik jeg forstår deg, har du erfart at ... og ble irritert da..... Er dette riktig forstått?\"\n\nVise at du forstår hvilke følelser som kommuniseres. Det er ofte svært viktig for den andre (og for oss selv som lytter) at vi gjenkjenner hvilke følelser som er i sving. En aktiv lytter viser at hun/han gjenkjenner og forstår dette. For eksempel: \"Ja, jeg forstår du er fortvilet når du har opplevd at ....\". Og så vil speilingen til den andre vise seg om tolkningen av andres opplevelser eller følelser er noenlunde riktig - det kan jo også hende at vi ennå ikke har forstått følelsene eller historien bak\n\nOppmuntre til videre utdyping, bidra til refleksjoner - en aktiv lytter er også en som kan bidra til å bringe samtalen eller den andres fortelling/forklaring videre. Både gjennom å be den andre fortelle mer om noe, eller stille et spørsmål for å be den andre om å reflektere høyt over bestemte sider av det som er sagt så langt\n\nOppsummere det du har hørt og forstått så langt - for å kunne avslutte eller å komme videre, kan det være viktig for den andre å høre at du din oppsummering. IKKE din vurdering eller analyse, men din oppsummering av hva den andre har sagt. Dersom den andre er usikker på om det som er sagt er blitt hørt, vil samtalen ofte komme tilbake og tilbake til samme tema. Mens dersom man er sikker på at det virkelig er hørt og forstått, er det enklere å temaet ligge en stund slik at man også kan snakke om noe annet viktig en stund.",
+        "note": "Hensikten med disse tipsene er å gi deg selv noe konkret å øve på dersom du prøve å skape bedre samtaler gjennom å utvikle dine egne evner til å være en aktiv lytter.\n\nI tillegg kan punktene brukes som en noe å se til dersom du ønsker å få eller selv er bedt om å gi andre tilbakemeldinger om hvordan du/de oppleves i direkte samtaler."
+      },
+      {
+        "title": "Trening, tilbakemelding",
+        "desc": "Bestem deg for hva du vil trene på, og hvem du vil be om å være utviklingspartner. Utviklingspartner sin rolle er å observere og å gi deg tilbakemelding om hva hun/han har observert.\n\nAvklar hvordan tilbakemelding skal foregå. Den som observerer og gir tilbakemeldinger må ha som utgangspunkt at tilbakemeldingene skal dekke et ønske og behov hos den som mottar tilbakemeldingen, ikke hos den som gir den.\nHusk at gode tilbakemeldingen må være ønsket, for ellers blir de i praksis ikke mottatt.\n\nUtviklingspartner observerer, enten i en bestemt situasjon, eller i flere ulike situasjoner, eller generelt når muligheten for å observere byr seg. Bruk gjerne punktene om aktiv lytting som en referanse når dere snakker om hva utviklingspartneren skal se etter når hun/han observerer.\n\nUtvikingspartneren gir sine tilbakemeldinger, og legger vekt på observasjoner og konkrete eksempler. Observatøren gjør ikke tolkninger eller analyser - dette er den som mottar tilbakemeldingene sin egne refleksjoner og læringsprosess som er den viktige, ikke observatøren sin.\n\nVariasjoner:\n- Lag rollespill for trening, og bruk eventuelt video i stedet for observatør\n- Vær enige om å gi hverandre tilbakemeldinger i et team/en gruppe etter et møte, med eller uten dedikerte observatører",
+        "note": "Trening på aktiv lytting kan selvsagt være et eget personlig prosjekt i det skjulte. Men det er enda mer effektivt å ha noen å samarbeide med, slik at man man gi og få tilbakemeldinger på hvordan man faktisk oppleves av andre i bestemte og relevante situasjoner. Vi kan avtale med en utviklingspartner. En litt mer ambisiøs tilnærming kan for eksempel å diskutere i et team (som i en lederguppe) at dette er noe vi vil bli bedre til, og så sette av tid til å gi hverandre konkrete, velmente og ønskede tilbakemeldinger bli enige om å sette av tid i ledergruppa, etter noen møter, for å gi hverandre forberedte tilbakemeldinger på vår aktive lytting"
+      }
+    ]
   }
 ]
