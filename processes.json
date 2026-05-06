@@ -1,5 +1,12 @@
 [
   {
+    "id": 16,
+    "title": "SAMLINGER",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
     "id": 1,
     "icon": "🧭",
     "title": "SØKEKONFERANSE - en medvirkningsbasert strategiprosess",
@@ -152,6 +159,13 @@
     ]
   },
   {
+    "id": 18,
+    "title": "ORGANISERING",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
     "id": 11,
     "title": "EN STØRRE OMSTILLING/ENDRING - designe, gjennomføre, lede",
     "icon": "📄",
@@ -223,6 +237,58 @@
     ]
   },
   {
+    "id": 21,
+    "title": "GODE PRINSIPPER FOR ARBEIDSORGANISERING - med fokus på mål og ikke hierarki",
+    "icon": "📄",
+    "description": "Arbeidet med å skape utviklingsmuligheter gjennom en minst mulig hierarkisk organisering er i seg selv også en prosess som ikke bør være for hierarkisk.. Lag en arbeidsgruppe med leder(e), tillitsvalgte (og eventuelle nøkkelpersoner) som jobber med denne organiseringsprosessen.\n\nDette er prinsipper hentet fra sosioteknisk tenking, og legger vekt på å gi muligheter for en enhet (typisk en gruppe/et team) å selv styre hvordan de organiserer arbeidet, skape muligheter for å utvikle nye måter å jobbe på, muligheter for å løse store og små utfordringer raskt og være fleksible og robuste",
+    "steps": [
+      {
+        "title": "Lag en klar oversikt",
+        "desc": "Ta utgangspunkt i hva som skal «leveres» av organisasjonsenheten, for eksempel generelle og spesifikke læringsmål, prosjekter/arrangement, miljø/trivsel, samhold, trygghet.",
+        "note": "Alt tar utgangspunkt i hva man skal skape/utvikle/levere, ikke hvordan man i dag er organisert for å gjøre det.\nNB Legg vekt på å først beskrive mål/resultater, og deretter hvilke rammer (ressurser, føringer, avhengigheter) man opererer under. Poenget er å ha et godt grunnlag for å trekke hensiktsmessige organisasjonsgrenser og skape enheter (for eksempel team), og så la disse enhetene få mest mulig handlefrihet i hvordan de løser sine oppgaver og leverer på målene."
+      },
+      {
+        "title": "\"Minimum critical spesification\" - styr det som må styres, overlat resten til de som gjør jobben",
+        "desc": "Spesifiser minst mulig. Vær opptatt hva som er kritiske mål/leveranser (for eksempel de sentrale målene eller noe som andre er avhengige av på grunn av koordinering). La enheten selv styre resten, både hva de gjør, organisering, oppgaver, tidsplanlegging, etc.",
+        "note": "Dette er et nøkkelprinsipp i hele tenkingen: Dersom det er mulig å la en enhet selv bestemme hvordan de vil løse sine oppgaver, så la de bestemme det. Ikke la hierarki eller ekspertise styre og fastsette mer enn det mest nødvendige og kritiske."
+      },
+      {
+        "title": "La de sterkeste avhengighetene være organisert sammen",
+        "desc": "Unngå organisasjonsgrenser mellom oppgaver som er viktige og krever mye koordinering/interaksjon.",
+        "note": "Dersom man for eksempel oppretter team, så er det viktig at de er sammensatt slik at de håndterer det aller aller meste innenfor teamene. Dersom det oppstår mye behov for daglig/ukentlig koordinering mellom enheter eller med leder/administrasjon, så har man trolig organisert for dårlig."
+      },
+      {
+        "title": "Gi enkel tilgang på informasjon",
+        "desc": "Ethvert mellomledd er en forsinkelse. Gi mest mulig direkte og øyeblikkelig tilgang til for eksempel regnskap, sykefravær, testresultater, eventuelle andre relevante tilbakemeldinger",
+        "note": "La hver enhet innhente all relevant informasjon/tilbakemelding mest mulig direkte"
+      },
+      {
+        "title": "Ressurstilgang",
+        "desc": "La hver enhet bestemme hvilke ressurser de trenger (innenfor rammene)",
+        "note": ""
+      },
+      {
+        "title": "Unngå for mye spesialisering",
+        "desc": "Gi flest mulig i enheten kompetanse og erfaring til å kunne fylle flest mulig roller og til å kunne jobbe med flest mulig oppgaver og utfordringer. Unngå høy grad av spesialisering.",
+        "note": "Dersom flere kan gjøre ulike oppgaver og gå inn i ulike roller ved behov, så øker dette fleksibiliteten og robustheten enormt, sammenliknet med hvis man er spesialiserte og ikke har overlapp"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "TBD",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
+    "id": 19,
+    "title": "FORBEDRINGSARBEID OG GOD DRIFT",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
     "id": 9,
     "title": "FORBEDRINGSGRUPPER - Bruk forbedringsgrupper til å organisere for kontinuerlig forbedring med de ansatte i førersetet",
     "icon": "📄",
@@ -287,22 +353,18 @@
     ]
   },
   {
-    "id": 2,
-    "icon": "🤝",
-    "title": "LEDERE COACHER LEDERE - praksisbasert lederutvikling og direkte hjelp i lederhverdagen",
-    "description": "Mange ledere har få muligheter i hverdagen til å diskutere konkrete utfordringer med andre som erfaring fra samme samme rolle og kanskje lignende situasjoner. Et er et viktig poeng er at denne arenaen ikke handler om generelle tema og utfordringer, som vi lett kan diskutere med mange, men konkrete lederutfordringer, her og nå",
-    "steps": [
-      {
-        "title": "Forberedelser og forutsetninger",
-        "desc": "* Passer for 4-6 ledere med noenlunde like lederroller\n* Hver deltaker tenker gjennom, før de møtes: Tenk gjennom en eller flere konkrete utfordringer som du har som leder i dag. Hva er det som tar mest av din energi Hva tenker du på kveld og natt? Hva er du mest usikker på?",
-        "note": ""
-      },
-      {
-        "title": "Gjennomføring av coachingen",
-        "desc": "En leder starter med å fortelle om sin utfordring, så konkret som mulig.\nDe andre skal lytte, spørre etter utdyping og klargjøring, og være sikre på at de forstår utfordringen problemeier opplever\nDeretter engasjerer hele gruppen seg i denne utfordringen gjennom å reflektere sammen, teste andre forståelse og nye perspektiv, spille inn med egne erfaringer, forslag til løsninger, etc.\nGruppen må selv finne ut når dere er ”ferdige”\nDeretter er det neste person i gruppen som legger fram sin utfordring, og ny runde.\nProsessen avsluttes når alle har fått delt sine utfordringer, eller ved tidspunkt avklart på forhånd",
-        "note": "Å hjelpe hverandre med konkrete lederutfordringer\nÅ skape trygghet gjennom opplevelse av at andre forstår og gjenkjenner mine utfordringer\nÅ kunne reflektere over generelle utfordringer i lederrollen, som kommer til syne i det enkelte case"
-      }
-    ]
+    "id": 22,
+    "title": "TBD",
+    "icon": "📄",
+    "description": "",
+    "steps": []
+  },
+  {
+    "id": 20,
+    "title": "TEAM OG UTVIKLINGSPROSESSER",
+    "icon": "📄",
+    "description": "",
+    "steps": []
   },
   {
     "id": 12,
@@ -378,6 +440,24 @@
         "title": "Trening, tilbakemelding",
         "desc": "Bestem deg for hva du vil trene på, og hvem du vil be om å være utviklingspartner. Utviklingspartner sin rolle er å observere og å gi deg tilbakemelding om hva hun/han har observert.\n\nAvklar hvordan tilbakemelding skal foregå. Den som observerer og gir tilbakemeldinger må ha som utgangspunkt at tilbakemeldingene skal dekke et ønske og behov hos den som mottar tilbakemeldingen, ikke hos den som gir den.\nHusk at gode tilbakemeldingen må være ønsket, for ellers blir de i praksis ikke mottatt.\n\nUtviklingspartner observerer, enten i en bestemt situasjon, eller i flere ulike situasjoner, eller generelt når muligheten for å observere byr seg. Bruk gjerne punktene om aktiv lytting som en referanse når dere snakker om hva utviklingspartneren skal se etter når hun/han observerer.\n\nUtvikingspartneren gir sine tilbakemeldinger, og legger vekt på observasjoner og konkrete eksempler. Observatøren gjør ikke tolkninger eller analyser - dette er den som mottar tilbakemeldingene sin egne refleksjoner og læringsprosess som er den viktige, ikke observatøren sin.\n\nVariasjoner:\n- Lag rollespill for trening, og bruk eventuelt video i stedet for observatør\n- Vær enige om å gi hverandre tilbakemeldinger i et team/en gruppe etter et møte, med eller uten dedikerte observatører",
         "note": "Trening på aktiv lytting kan selvsagt være et eget personlig prosjekt i det skjulte. Men det er enda mer effektivt å ha noen å samarbeide med, slik at man man gi og få tilbakemeldinger på hvordan man faktisk oppleves av andre i bestemte og relevante situasjoner. Vi kan avtale med en utviklingspartner. En litt mer ambisiøs tilnærming kan for eksempel å diskutere i et team (som i en lederguppe) at dette er noe vi vil bli bedre til, og så sette av tid til å gi hverandre konkrete, velmente og ønskede tilbakemeldinger bli enige om å sette av tid i ledergruppa, etter noen møter, for å gi hverandre forberedte tilbakemeldinger på vår aktive lytting"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "icon": "🤝",
+    "title": "LEDERE COACHER LEDERE - praksisbasert lederutvikling og direkte hjelp i lederhverdagen",
+    "description": "Mange ledere har få muligheter i hverdagen til å diskutere konkrete utfordringer med andre som erfaring fra samme samme rolle og kanskje lignende situasjoner. Et er et viktig poeng er at denne arenaen ikke handler om generelle tema og utfordringer, som vi lett kan diskutere med mange, men konkrete lederutfordringer, her og nå",
+    "steps": [
+      {
+        "title": "Forberedelser og forutsetninger",
+        "desc": "* Passer for 4-6 ledere med noenlunde like lederroller\n* Hver deltaker tenker gjennom, før de møtes: Tenk gjennom en eller flere konkrete utfordringer som du har som leder i dag. Hva er det som tar mest av din energi Hva tenker du på kveld og natt? Hva er du mest usikker på?",
+        "note": ""
+      },
+      {
+        "title": "Gjennomføring av coachingen",
+        "desc": "En leder starter med å fortelle om sin utfordring, så konkret som mulig.\nDe andre skal lytte, spørre etter utdyping og klargjøring, og være sikre på at de forstår utfordringen problemeier opplever\nDeretter engasjerer hele gruppen seg i denne utfordringen gjennom å reflektere sammen, teste andre forståelse og nye perspektiv, spille inn med egne erfaringer, forslag til løsninger, etc.\nGruppen må selv finne ut når dere er ”ferdige”\nDeretter er det neste person i gruppen som legger fram sin utfordring, og ny runde.\nProsessen avsluttes når alle har fått delt sine utfordringer, eller ved tidspunkt avklart på forhånd",
+        "note": "Å hjelpe hverandre med konkrete lederutfordringer\nÅ skape trygghet gjennom opplevelse av at andre forstår og gjenkjenner mine utfordringer\nÅ kunne reflektere over generelle utfordringer i lederrollen, som kommer til syne i det enkelte case"
       }
     ]
   }
