@@ -55,6 +55,11 @@
   .card-btn.edit:hover { background: #cfe0d1; }
   .card-btn.del { background: #fdecea; color: #b53c3c; }
   .card-btn.del:hover { background: #f5c6c2; }
+  .drag-handle { cursor: grab; color: var(--ink-muted); font-size: 1rem; padding: 2px 4px; margin-right: 4px; user-select: none; }
+  .drag-handle:active { cursor: grabbing; }
+  .card.drag-over { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-light); transform: scale(1.01); }
+  .card.dragging { opacity: 0.4; }
+  .reorder-hint { font-size: 0.75rem; color: var(--ink-muted); padding: 8px 40px 0; font-style: italic; }
 
   .empty-state { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--ink-muted); }
   .empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
@@ -113,6 +118,11 @@
 
   .step-edit-item { background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
   .step-edit-header { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
+  .step-header-left { display: flex; align-items: center; gap: 6px; }
+  .step-reorder { display: flex; gap: 2px; }
+  .step-move-btn { background: none; border: 1px solid var(--border); color: var(--ink-muted); cursor: pointer; width: 24px; height: 24px; border-radius: 4px; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s, color 0.15s; }
+  .step-move-btn:hover:not(:disabled) { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+  .step-move-btn:disabled { opacity: 0.3; cursor: default; }
   .step-field-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--ink-muted); margin-bottom: 5px; margin-top: 10px; }
   .step-title-input { width: 100%; border: 1.5px solid var(--border); border-radius: 6px; padding: 8px 11px; font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: var(--ink); background: white; outline: none; transition: border-color 0.2s; margin-bottom: 2px; }
   .step-title-input:focus { border-color: var(--accent); }
@@ -165,6 +175,7 @@
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Søk etter prosess…" oninput="renderDashboard()">
   </div>
+  <div class="reorder-hint" id="reorderHint">☰ Dra kortene for å endre rekkefølgen</div>
   <div id="dashboard"></div>
 </div>
 
@@ -305,22 +316,65 @@ function fmt(taId, type) {
 }
 
 // ── DASHBOARD ──
+let dragSrcId = null;
+
 function renderDashboard() {
   const q=(document.getElementById('searchInput')?.value||'').toLowerCase();
-  const list=q?processes.filter(p=>p.title.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)):processes;
+  const isSearching = q.length > 0;
+  const list=isSearching?processes.filter(p=>p.title.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)):processes;
   const g=document.getElementById('dashboard');
-  if(!list.length){g.innerHTML=`<div class="empty-state"><h3>${q?'Ingen treff':'Ingen prosesser ennå'}</h3><p>Klikk «Ny prosess» for å komme i gang.</p></div>`;return;}
+  document.getElementById('reorderHint').style.display = isSearching ? 'none' : '';
+  if(!list.length){g.innerHTML=`<div class="empty-state"><h3>${isSearching?'Ingen treff':'Ingen prosesser ennå'}</h3><p>Klikk «Ny prosess» for å komme i gang.</p></div>`;return;}
   g.innerHTML=list.map(p=>`
-    <div class="card">
-      <span class="card-icon" onclick="openPanel(${p.id})">${p.icon||'📄'}</span>
-      <h2 onclick="openPanel(${p.id})">${esc(p.title)}</h2>
-      <p onclick="openPanel(${p.id})">${(p.description||'').replace(/[#*_\[\]!]/g,'').substring(0,120)}${(p.description||'').length>120?'…':''}</p>
-      <div class="card-steps" onclick="openPanel(${p.id})">${p.steps.length} trinn</div>
-      <div class="card-actions">
-        <button class="card-btn edit" onclick="openModal(${p.id})">Rediger</button>
-        <button class="card-btn del" onclick="deleteProcess(${p.id})">Slett</button>
+    <div class="card" id="card_${p.id}" draggable="true"
+      ondragstart="dragStart(event,${p.id})"
+      ondragover="dragOver(event,${p.id})"
+      ondragleave="dragLeave(event)"
+      ondrop="dragDrop(event,${p.id})"
+      ondragend="dragEnd(event)">
+      <div style="display:flex;align-items:flex-start;gap:6px">
+        <span class="drag-handle" title="Dra for å endre rekkefølge">⠿</span>
+        <div style="flex:1">
+          <span class="card-icon" onclick="openPanel(${p.id})">${p.icon||'📄'}</span>
+          <h2 onclick="openPanel(${p.id})">${esc(p.title)}</h2>
+          <p onclick="openPanel(${p.id})">${(p.description||'').replace(/[#*_\[\]!]/g,'').substring(0,120)}${(p.description||'').length>120?'…':''}</p>
+          <div class="card-steps" onclick="openPanel(${p.id})">${p.steps.length} trinn</div>
+          <div class="card-actions">
+            <button class="card-btn edit" onclick="openModal(${p.id})">Rediger</button>
+            <button class="card-btn del" onclick="deleteProcess(${p.id})">Slett</button>
+          </div>
+        </div>
       </div>
     </div>`).join('');
+}
+
+function dragStart(e, id) {
+  dragSrcId = id;
+  e.dataTransfer.effectAllowed = 'move';
+  setTimeout(() => document.getElementById('card_'+id)?.classList.add('dragging'), 0);
+}
+function dragOver(e, id) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  if (id !== dragSrcId) document.getElementById('card_'+id)?.classList.add('drag-over');
+}
+function dragLeave(e) {
+  e.currentTarget.classList.remove('drag-over');
+}
+function dragDrop(e, targetId) {
+  e.preventDefault();
+  if (dragSrcId === null || dragSrcId === targetId) return;
+  const srcIdx = processes.findIndex(x=>x.id===dragSrcId);
+  const tgtIdx = processes.findIndex(x=>x.id===targetId);
+  if (srcIdx < 0 || tgtIdx < 0) return;
+  const moved = processes.splice(srcIdx, 1)[0];
+  processes.splice(tgtIdx, 0, moved);
+  renderDashboard();
+  saveJSON();
+}
+function dragEnd(e) {
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('dragging','drag-over'));
+  dragSrcId = null;
 }
 
 // ── PANEL ──
@@ -356,11 +410,19 @@ function closePanel(e) {
 let editingId=null;
 let stepCount=0;
 
-function stepHtml(idx, s) {
+function stepHtml(idx, s, total) {
   const dv=s?(s.desc||''):'', nv=s?(s.note||''):'';
   return `<div class="step-edit-item" data-idx="${idx}">
-    <div class="step-edit-header"><span>Trinn ${idx+1}</span>
-      <button class="remove-step-btn" onclick="this.closest('.step-edit-item').remove();renumber()">✕</button></div>
+    <div class="step-edit-header">
+      <div class="step-header-left">
+        <span>Trinn ${idx+1}</span>
+        <div class="step-reorder">
+          <button class="step-move-btn" title="Flytt opp" onclick="moveStep(this,-1)" ${idx===0?'disabled':''}>▲</button>
+          <button class="step-move-btn" title="Flytt ned" onclick="moveStep(this,1)">▼</button>
+        </div>
+      </div>
+      <button class="remove-step-btn" onclick="this.closest('.step-edit-item').remove();renumber()">✕</button>
+    </div>
     <input type="text" class="step-title-input" placeholder="Tittel på trinnet" value="${s?esc(s.title):''}">
     <div class="step-field-label">Beskrivelse</div>
     <div class="md-editor-wrap">
@@ -396,6 +458,31 @@ function stepHtml(idx, s) {
       <div class="md-preview md-body" id="sn${idx}Prev"></div>
     </div>
   </div>`;
+}
+
+function moveStep(btn, dir) {
+  // Snapshot all step data from DOM before moving
+  const items = [...document.querySelectorAll('.step-edit-item')];
+  const el = btn.closest('.step-edit-item');
+  const idx = items.indexOf(el);
+  const newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= items.length) return;
+
+  // Read current values from all steps
+  const data = items.map((item, i) => ({
+    title: item.querySelector('.step-title-input')?.value || '',
+    desc:  document.getElementById('sd'+i)?.value || '',
+    note:  document.getElementById('sn'+i)?.value || ''
+  }));
+
+  // Swap
+  [data[idx], data[newIdx]] = [data[newIdx], data[idx]];
+
+  // Re-render steps editor with swapped data
+  const ed = document.getElementById('stepsEditor');
+  ed.innerHTML = '';
+  data.forEach((s, i) => { ed.insertAdjacentHTML('beforeend', stepHtml(i, s)); });
+  stepCount = data.length;
 }
 
 function openModal(id=null) {
@@ -437,6 +524,7 @@ function saveProcess() {
   const icon=document.getElementById('fIcon').value.trim()||'📄';
   const description=document.getElementById('fDesc').value.trim();
   const steps=[];
+  // Read steps in DOM order (respects reordering)
   document.querySelectorAll('.step-edit-item').forEach((el,i)=>{
     const t=el.querySelector('.step-title-input')?.value.trim();
     const d=document.getElementById('sd'+i)?.value.trim()||'';
