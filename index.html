@@ -6,7 +6,8 @@
 <title>Prosessbibliotek</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<!-- Plausible analytics - bytt ut DITTDOMENE.github.io med din faktiske domene -->
+<script defer data-domain="rogerklev-pixel.github.io" src="https://plausible.io/js/script.tagged-events.js"></script>
 <style>
   :root {
     --bg: #f5f2ec;
@@ -173,6 +174,12 @@ function renderDashboard() {
 function openPanel(id) {
   const p = processes.find(x => x.id === id);
   if (!p) return;
+
+  // Send event to Plausible - tracks which process is viewed
+  if (typeof window.plausible === 'function') {
+    window.plausible('Prosess vist', { props: { prosess: p.title } });
+  }
+
   const stepsHtml = p.steps.map((s, i) => `
     <li class="step-item">
       <div class="step-num">${i+1}</div>
