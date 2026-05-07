@@ -56,7 +56,7 @@
     "id": 6,
     "title": "KARUSELLEN - Dele innsikt på tvers av satsinger, prosjekter eller organisasjonsenheter",
     "icon": "📄",
-    "description": "Karusellen er en enkel arbeidsform for å dele informasjon mellom ulike enheter, for eksempel mellom avdelinger/grupper som ellers jobber avgrenset fra hverandre. Det kan for eksempel være informasjonsdeling mellom ulike skoler i en kommune, ulike trinn/avdelinger på samme skole, mellom en skole og andre enheter/fagmiljø skolen samhandler med, eller det kan være mellom ulike satsinger som vil ha nytte av å bli bedre kjent med hverandre.\nEtter at forberedelsene er gjort, er selve gjennomføringen svært enkel, og det kreves veldig lite prosesserfaring å gjennomføre den.",
+    "description": "Karusellen er en enkel arbeidsform for å dele informasjon mellom ulike enheter, for eksempel mellom avdelinger/grupper som ellers jobber avgrenset fra hverandre.  Deltakere går gruppevis på \"besøk\" ved ulike forberedte stands etter en bestemt rytme, og lærer om og diskuterer de tema som er forberedte .\nDet kreves litt forberedelser å lage stands, men deretter er selve gjennomføringen svært enkel, og det kreves veldig lite prosesserfaring å gjennomføre den.",
     "steps": [
       {
         "title": "Velkommen og eventuelle siste klargjøringer",
@@ -224,7 +224,7 @@
   },
   {
     "id": 21,
-    "title": "GODE PRINSIPPER FOR ARBEIDSORGANISERING - med fokus på mål og ikke hierarki",
+    "title": "GODE PRINSIPPER FOR ARBEIDSORGANISERING",
     "icon": "📄",
     "description": "Arbeidet med å skape utviklingsmuligheter gjennom en minst mulig hierarkisk organisering er i seg selv også en prosess som ikke bør være for hierarkisk.. Lag en arbeidsgruppe med leder(e), tillitsvalgte (og eventuelle nøkkelpersoner) som jobber med denne organiseringsprosessen.\n\nDette er prinsipper hentet fra sosioteknisk tenking, og legger vekt på å gi muligheter for en enhet (typisk en gruppe/et team) å selv styre hvordan de organiserer arbeidet, skape muligheter for å utvikle nye måter å jobbe på, muligheter for å løse store og små utfordringer raskt og være fleksible og robuste",
     "steps": [
@@ -262,7 +262,7 @@
   },
   {
     "id": 9,
-    "title": "FORBEDRINGSGRUPPER - Bruk forbedringsgrupper til å organisere for kontinuerlig forbedring med de ansatte i førersetet",
+    "title": "FORBEDRINGSGRUPPER -  kontinuerlig forbedring med de ansatte i førersetet",
     "icon": "📄",
     "description": "Kjært barn har mange navn. Denne arbeidsformen kan vi si er en variant av «kvalitetssirkler», som ble fremmet på 80/90-tallet innenfor «Totalkvalitetsledelse» (Total Quality Management – forkortet TQM).\nBetegnelsen «forbedringsgrupper» gir en mer umiddelbar ide om hva det handler om.\n\nTanken bak er ganske enkelt at de som jobber innen et område, oftest har veldig gode og konkrete ideer og forslag på mange ulike områder. Det kan være noe som endrer eller forenkler måten noe gjøres på, at man tar bort oppgaver som er unødvendige, noe som bidrar positivt til arbeidsmiljøet, at man tar tak i en utfordring som ikke er sett eller håndtert, osv. Ideene/forlagene kommer fra gruppemedlemmene selv, og det er gruppen selv som bestemmer hva slags type forbedringer de diskuterer. Det er viktig å spesielt prioritere de forbedringene gruppen kan gjennomføre selv, uten beslutninger fra andre.\nForbedringsgruppen møtes jevnlig i korte møter for å fremme og diskutere ideer og innspill til slike forbedringer.",
     "steps": [
@@ -296,7 +296,7 @@
   {
     "id": 3,
     "icon": "📋",
-    "title": "TAVLEMØTER - svært korte og strukturerte møter for oppfølging  i både drift og utvikling",
+    "title": "TAVLEMØTER - korte og strukturerte møter for oppfølging  i både drift og utvikling",
     "description": "Tavlemøtene er korte og stående arbeidsmøter som både kan brukes i planlegging og oppfølging av drift, og til oppfølging av tiltak/satsinger/forbedringsområder. Deltakerne møtes ved tavlen der stikkord for konkrete planlagte handlinger er oppsummert under de respektive satsingene/prosjektene, og deltakerne oppsummerer kort status på det som ble avtalt sist, hva man eventuelt har lært (for eksempel utfordringer man ikke var bevisste tidligere), og avtale konkrete nye arbeidsoppgaver (hva, hvem og når) som skal utføres videre.\n\nEn av utfordringene med mange typer utviklingsarbeid, enten det er prosjekter, satsinger, eller kontinuerlige forbedringer, er å skape en tett og positiv oppfølging som både sikrer framdrift, læring og oppmerksomhet, ute at det krever for mye møtetid i en travel arbeidshverdag. Tavlemøter skal gjøre oppfølging mye enklere og effektiv.\n\nTavlemøte er en arbeidsform man kan finne veldig formalisert som en «Lean-teknikk», men som man også (og like gjerne) kan lage sin egen versjon av, basert på noen prinsipper.\n\nTavlens funksjon er:\n- Å skape en visuell arbeidsflate for alle (i stedet for et dokument på en eller annen PC)\n- Å bidra til å skape en hukommelse knyttet til utviklingsarbeidet, både gjennom at tavlen er eller kan være synlig for alle også i hverdagen, samt at informasjonen på tavlen skaper kontinuitet mellom møtene\n- Å lage en enkel ramme for en kort arbeidsøkt (møter stående ved en tavle blir alltid mer tidseffektiv enn om man sitter med en kaffekopp ved et bord)\n- Å sikre at enkle planer følges opp og aktiviteter koordineres, og at man enklere kan  lære og eventuelt justere felles forståelse og de konkrete aktivitetene",
     "steps": [
       {
